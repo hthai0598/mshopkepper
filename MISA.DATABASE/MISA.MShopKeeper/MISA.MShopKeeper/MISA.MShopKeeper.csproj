@@ -1,0 +1,380 @@
+﻿<Project ToolsVersion="15.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.2.0.0\build\net46\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props" Condition="Exists('..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.2.0.0\build\net46\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props')" />
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>
+    </ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{E6866342-A289-443A-8064-9AD330FCD907}</ProjectGuid>
+    <ProjectTypeGuids>{349c5851-65df-11da-9384-00065b846f21};{fae04ec0-301f-11d3-bf4b-00c04f79efbc}</ProjectTypeGuids>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>MISA.MShopKeeper</RootNamespace>
+    <AssemblyName>MISA.MShopKeeper</AssemblyName>
+    <TargetFrameworkVersion>v4.6.1</TargetFrameworkVersion>
+    <UseIISExpress>true</UseIISExpress>
+    <Use64BitIISExpress />
+    <IISExpressSSLPort />
+    <IISExpressAnonymousAuthentication />
+    <IISExpressWindowsAuthentication />
+    <IISExpressUseClassicPipelineMode />
+    <UseGlobalApplicationHostFile />
+    <NuGetPackageImportStamp>
+    </NuGetPackageImportStamp>
+    <SccProjectName>SAK</SccProjectName>
+    <SccLocalPath>SAK</SccLocalPath>
+    <SccAuxPath>SAK</SccAuxPath>
+    <SccProvider>SAK</SccProvider>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Web.DynamicData" />
+    <Reference Include="System.Web.Entity" />
+    <Reference Include="System.Web.ApplicationServices" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.Web.Extensions" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Xml" />
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.Web.Services" />
+    <Reference Include="System.EnterpriseServices" />
+  </ItemGroup>
+  <ItemGroup>
+    <Reference Include="Newtonsoft.Json">
+      <HintPath>..\packages\Newtonsoft.Json.11.0.1\lib\net45\Newtonsoft.Json.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Net.Http.Formatting">
+      <HintPath>..\packages\Microsoft.AspNet.WebApi.Client.5.2.4\lib\net45\System.Net.Http.Formatting.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Http">
+      <HintPath>..\packages\Microsoft.AspNet.WebApi.Core.5.2.4\lib\net45\System.Web.Http.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Http.WebHost">
+      <HintPath>..\packages\Microsoft.AspNet.WebApi.WebHost.5.2.4\lib\net45\System.Web.Http.WebHost.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.CodeDom.Providers.DotNetCompilerPlatform">
+      <HintPath>..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.2.0.0\lib\net45\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.dll" />
+    <Content Include="bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.xml" />
+    <Content Include="bin\MISA.MShopKeeper.dll" />
+    <Content Include="bin\MISA.MShopKeeper.pdb" />
+    <Content Include="bin\Newtonsoft.Json.dll" />
+    <Content Include="bin\Newtonsoft.Json.xml" />
+    <Content Include="bin\roslyn\csc.exe" />
+    <Content Include="bin\roslyn\csi.exe" />
+    <Content Include="bin\roslyn\Microsoft.Build.Tasks.CodeAnalysis.dll" />
+    <Content Include="bin\roslyn\Microsoft.CodeAnalysis.CSharp.dll" />
+    <Content Include="bin\roslyn\Microsoft.CodeAnalysis.CSharp.Scripting.dll" />
+    <Content Include="bin\roslyn\Microsoft.CodeAnalysis.dll" />
+    <Content Include="bin\roslyn\Microsoft.CodeAnalysis.Scripting.dll" />
+    <Content Include="bin\roslyn\Microsoft.CodeAnalysis.VisualBasic.dll" />
+    <Content Include="bin\roslyn\Microsoft.DiaSymReader.Native.amd64.dll" />
+    <Content Include="bin\roslyn\Microsoft.DiaSymReader.Native.x86.dll" />
+    <Content Include="bin\roslyn\System.AppContext.dll" />
+    <Content Include="bin\roslyn\System.Collections.Immutable.dll" />
+    <Content Include="bin\roslyn\System.Console.dll" />
+    <Content Include="bin\roslyn\System.Diagnostics.FileVersionInfo.dll" />
+    <Content Include="bin\roslyn\System.Diagnostics.StackTrace.dll" />
+    <Content Include="bin\roslyn\System.IO.Compression.dll" />
+    <Content Include="bin\roslyn\System.IO.FileSystem.dll" />
+    <Content Include="bin\roslyn\System.IO.FileSystem.Primitives.dll" />
+    <Content Include="bin\roslyn\System.IO.Pipes.AccessControl.dll" />
+    <Content Include="bin\roslyn\System.IO.Pipes.dll" />
+    <Content Include="bin\roslyn\System.Reflection.Metadata.dll" />
+    <Content Include="bin\roslyn\System.Security.AccessControl.dll" />
+    <Content Include="bin\roslyn\System.Security.Claims.dll" />
+    <Content Include="bin\roslyn\System.Security.Cryptography.Algorithms.dll" />
+    <Content Include="bin\roslyn\System.Security.Cryptography.Encoding.dll" />
+    <Content Include="bin\roslyn\System.Security.Cryptography.Primitives.dll" />
+    <Content Include="bin\roslyn\System.Security.Cryptography.X509Certificates.dll" />
+    <Content Include="bin\roslyn\System.Security.Principal.Windows.dll" />
+    <Content Include="bin\roslyn\System.Text.Encoding.CodePages.dll" />
+    <Content Include="bin\roslyn\System.ValueTuple.dll" />
+    <Content Include="bin\roslyn\System.Xml.ReaderWriter.dll" />
+    <Content Include="bin\roslyn\System.Xml.XmlDocument.dll" />
+    <Content Include="bin\roslyn\System.Xml.XPath.dll" />
+    <Content Include="bin\roslyn\System.Xml.XPath.XDocument.dll" />
+    <Content Include="bin\roslyn\vbc.exe" />
+    <Content Include="bin\roslyn\VBCSCompiler.exe" />
+    <Content Include="bin\System.Net.Http.Formatting.dll" />
+    <Content Include="bin\System.Net.Http.Formatting.xml" />
+    <Content Include="bin\System.Web.Http.dll" />
+    <Content Include="bin\System.Web.Http.WebHost.dll" />
+    <Content Include="bin\System.Web.Http.WebHost.xml" />
+    <Content Include="bin\System.Web.Http.xml" />
+    <Content Include="Content\lplong\Icons\arrow-down-line.png" />
+    <Content Include="Content\lplong\Icons\arrow-down-white.png" />
+    <Content Include="Content\lplong\Icons\check.png" />
+    <Content Include="Content\lplong\Icons\common-icon.png" />
+    <Content Include="Content\lplong\Icons\exclamation.png" />
+    <Content Include="Content\lplong\Icons\icon-change-password16.png" />
+    <Content Include="Content\lplong\Icons\icon-feedback.png" />
+    <Content Include="Content\lplong\Icons\icon-logout16.png" />
+    <Content Include="Content\lplong\Icons\icon-tong-quan.png" />
+    <Content Include="Content\lplong\Icons\icon-zoomin-16-grey.png" />
+    <Content Include="Content\lplong\Icons\icon_5shop_white_24_1.png" />
+    <Content Include="Content\lplong\Icons\icon_help_18.png" />
+    <Content Include="Content\lplong\Icons\ic_ocm_logo.png" />
+    <Content Include="Content\lplong\Icons\ic_sogiaohang.png" />
+    <Content Include="Content\lplong\Icons\ic_video_library.png" />
+    <Content Include="Content\lplong\Icons\image_ketnoigiaovan.png" />
+    <Content Include="Content\lplong\Icons\logo-mshopkeeper.png" />
+    <Content Include="Content\lplong\Icons\mail.png" />
+    <Content Include="Content\lplong\Icons\Maximize.png" />
+    <Content Include="Content\lplong\Icons\not-save.png" />
+    <Content Include="Content\lplong\Icons\notify-18.png" />
+    <Content Include="Content\lplong\Icons\page-loading.gif" />
+    <Content Include="Content\lplong\Icons\quick-add.png" />
+    <Content Include="Content\lplong\Icons\Quick-search.png" />
+    <Content Include="Content\lplong\Icons\radio-check.png" />
+    <Content Include="Content\lplong\Icons\radio-uncheck.png" />
+    <Content Include="Content\lplong\Icons\save-white.png" />
+    <Content Include="Content\lplong\Icons\Search-blue.png" />
+    <Content Include="Content\lplong\Icons\slibarmenu.png" />
+    <Content Include="Content\lplong\Icons\Support1.png" />
+    <Content Include="Content\lplong\Icons\uncheck.png" />
+    <Content Include="Content\lplong\Image\banner_login_be.png" />
+    <Content Include="Content\lplong\Image\icon-popup.png" />
+    <Content Include="Content\lplong\Image\Image.png" />
+    <Content Include="Content\lplong\Logo\mshopkeeper_logo.png" />
+    <Content Include="Content\nhthai\Img\arrow-down-line.png" />
+    <Content Include="Content\nhthai\Img\check.png" />
+    <Content Include="Content\nhthai\Img\common-icon.png" />
+    <Content Include="Content\nhthai\Img\copy-down.png" />
+    <Content Include="Content\nhthai\Img\exclamation.png" />
+    <Content Include="Content\nhthai\Img\help.png" />
+    <Content Include="Content\nhthai\Img\icon-help-18-hover.png" />
+    <Content Include="Content\nhthai\Img\icon-popup.png" />
+    <Content Include="Content\nhthai\Img\icon_5shop_white_24_1.png" />
+    <Content Include="Content\nhthai\Img\ic_ocm_logo.png" />
+    <Content Include="Content\nhthai\Img\ic_sogiaohang.png" />
+    <Content Include="Content\nhthai\Img\left-arrow.png" />
+    <Content Include="Content\nhthai\Img\loading.gif" />
+    <Content Include="Content\nhthai\Img\logo-mshopkeeper.png" />
+    <Content Include="Content\nhthai\Img\Maximize.png" />
+    <Content Include="Content\nhthai\Img\not-save.png" />
+    <Content Include="Content\nhthai\Img\notify-18.png" />
+    <Content Include="Content\nhthai\Img\notify-hover-18.png" />
+    <Content Include="Content\nhthai\Img\Product.png" />
+    <Content Include="Content\nhthai\Img\Quick-search.png" />
+    <Content Include="Content\nhthai\Img\radio-check.png" />
+    <Content Include="Content\nhthai\Img\radio-uncheck.png" />
+    <Content Include="Content\nhthai\Img\slibarmenu.png" />
+    <Content Include="Content\nhthai\Img\uncheck.png" />
+    <Content Include="Content\nhthai\Img\user.jpg" />
+    <Content Include="Content\nxphong\icons\common-icon.png" />
+    <Content Include="Content\nxphong\icons\exclamation.png" />
+    <Content Include="Content\nxphong\icons\icon-popup.png" />
+    <Content Include="Content\nxphong\icons\MShopkeeper.png" />
+    <Content Include="Content\nxphong\icons\slibarmenu.png" />
+    <Content Include="Content\nxphong\images\246x0w.jpg" />
+    <Content Include="Content\nxphong\images\arrow-down-line.png" />
+    <Content Include="Content\nxphong\images\back.png" />
+    <Content Include="Content\nxphong\images\help.png" />
+    <Content Include="Content\nxphong\images\icon-delete.png" />
+    <Content Include="Content\nxphong\images\icon_5shop_white_24_1.png" />
+    <Content Include="Content\nxphong\images\icon_help_18.png" />
+    <Content Include="Content\nxphong\images\ic_ocm_logo.png" />
+    <Content Include="Content\nxphong\images\ic_sogiaohang.png" />
+    <Content Include="Content\nxphong\images\Image.jpg" />
+    <Content Include="Content\nxphong\images\loading.gif" />
+    <Content Include="Content\nxphong\images\logo-mshopkeeper.png" />
+    <Content Include="Content\nxphong\images\notify-18.png" />
+    <Content Include="Content\nxphong\images\Product.png" />
+    <Content Include="Content\nxphong\images\show_password.png" />
+    <Content Include="CSS\nhthai\context-menu.css" />
+    <Content Include="CSS\nhthai\custome-datepicker.css" />
+    <Content Include="CSS\nhthai\dialog-chonnhacungcap.css" />
+    <Content Include="CSS\nhthai\dialog-content-group.css" />
+    <Content Include="CSS\nhthai\dialog-delete.css" />
+    <Content Include="CSS\nhthai\dialog-insert.css" />
+    <Content Include="CSS\nhthai\dialog-nhacungcap.css" />
+    <Content Include="CSS\nhthai\dialog-nvmuahang.css" />
+    <Content Include="CSS\nhthai\main.css" />
+    <Content Include="CSS\nhthai\menuflex.css" />
+    <Content Include="CSS\nhthai\navbar.css" />
+    <Content Include="CSS\nhthai\pagination.css" />
+    <Content Include="CSS\nhthai\sidebarmenu.css" />
+    <Content Include="CSS\nhthai\table-content.css" />
+    <Content Include="CSS\nhthai\table-description.css" />
+    <Content Include="CSS\nhthai\table-details.css" />
+    <Content Include="CSS\nhthai\table-footer.css" />
+    <Content Include="CSS\nhthai\table-menu.css" />
+    <Content Include="CSS\nhthai\table.css" />
+    <Content Include="CSS\nhthai\toggle.css" />
+    <Content Include="Global.asax" />
+    <Content Include="obj\Debug\MISA.MShopKeeper.csproj.FileListAbsolute.txt" />
+    <Content Include="obj\Debug\MISA.MShopKeeper.dll" />
+    <Content Include="obj\Debug\MISA.MShopKeeper.pdb" />
+    <Content Include="Scripts\nhthai\Commod\base.js" />
+    <Content Include="Scripts\nhthai\Commod\commod.js" />
+    <Content Include="Scripts\nhthai\Commod\Dialog.js" />
+    <Content Include="Scripts\nhthai\Custome\main.js" />
+    <Content Include="Scripts\nhthai\Lib\all.js" />
+    <Content Include="Scripts\nhthai\Lib\bootstrap.min.css" />
+    <Content Include="Scripts\nhthai\Lib\bootstrap.min.js" />
+    <Content Include="Scripts\nhthai\Lib\fontawesome.min.css" />
+    <Content Include="Scripts\nhthai\Lib\fontawesome.min.js" />
+    <Content Include="Scripts\nhthai\Lib\jquery-1.12.4.js" />
+    <Content Include="Scripts\nhthai\Lib\jquery-3.3.1.slim.min.js" />
+    <Content Include="Scripts\nhthai\Lib\jquery-3.4.1.min.js" />
+    <Content Include="Scripts\nhthai\Lib\all.css" />
+    <Content Include="Scripts\nhthai\Lib\jquery-ui-1.12.1.custom\AUTHORS.txt" />
+    <Content Include="Scripts\nhthai\Lib\jquery-ui-1.12.1.custom\external\jquery\jquery.js" />
+    <Content Include="Scripts\nhthai\Lib\jquery-ui-1.12.1.custom\images\ui-icons_444444_256x240.png" />
+    <Content Include="Scripts\nhthai\Lib\jquery-ui-1.12.1.custom\images\ui-icons_555555_256x240.png" />
+    <Content Include="Scripts\nhthai\Lib\jquery-ui-1.12.1.custom\images\ui-icons_777620_256x240.png" />
+    <Content Include="Scripts\nhthai\Lib\jquery-ui-1.12.1.custom\images\ui-icons_777777_256x240.png" />
+    <Content Include="Scripts\nhthai\Lib\jquery-ui-1.12.1.custom\images\ui-icons_cc0000_256x240.png" />
+    <Content Include="Scripts\nhthai\Lib\jquery-ui-1.12.1.custom\images\ui-icons_ffffff_256x240.png" />
+    <Content Include="Scripts\nhthai\Lib\jquery-ui-1.12.1.custom\index.html" />
+    <Content Include="Scripts\nhthai\Lib\jquery-ui-1.12.1.custom\jquery-ui.css" />
+    <Content Include="Scripts\nhthai\Lib\jquery-ui-1.12.1.custom\jquery-ui.js" />
+    <Content Include="Scripts\nhthai\Lib\jquery-ui-1.12.1.custom\jquery-ui.min.css" />
+    <Content Include="Scripts\nhthai\Lib\jquery-ui-1.12.1.custom\jquery-ui.min.js" />
+    <Content Include="Scripts\nhthai\Lib\jquery-ui-1.12.1.custom\jquery-ui.structure.css" />
+    <Content Include="Scripts\nhthai\Lib\jquery-ui-1.12.1.custom\jquery-ui.structure.min.css" />
+    <Content Include="Scripts\nhthai\Lib\jquery-ui-1.12.1.custom\jquery-ui.theme.css" />
+    <Content Include="Scripts\nhthai\Lib\jquery-ui-1.12.1.custom\jquery-ui.theme.min.css" />
+    <Content Include="Scripts\nhthai\Lib\jquery-ui-1.12.1.custom\LICENSE.txt" />
+    <Content Include="Scripts\nhthai\Lib\jquery-ui-1.12.1.custom\moment.js" />
+    <Content Include="Scripts\nhthai\Lib\jquery-ui.css" />
+    <Content Include="Scripts\nhthai\Lib\jquery-ui.js" />
+    <Content Include="Scripts\nhthai\Lib\jquery.contextMenu.min.css" />
+    <Content Include="Scripts\nhthai\Lib\jquery.contextMenu.min.js" />
+    <Content Include="Scripts\nhthai\Lib\jquery.key.js" />
+    <Content Include="Scripts\nhthai\Lib\jquery.ui.position.js" />
+    <Content Include="Scripts\nhthai\Lib\moment.js" />
+    <Content Include="Scripts\nhthai\Lib\popper.min.js" />
+    <Content Include="Scripts\nhthai\Lib\regular.css" />
+    <Content Include="Scripts\nhthai\Lib\regular.js" />
+    <Content Include="Scripts\nhthai\Lib\solid.css" />
+    <Content Include="Scripts\nhthai\Lib\solid.js" />
+    <Content Include="Views\nhthai\index.html" />
+    <Content Include="Web.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="App_Start\WebApiConfig.cs" />
+    <Compile Include="Controllers\nhthai\ItemDetalisController.cs" />
+    <Compile Include="Controllers\nhthai\ManagerShopController.cs" />
+    <Compile Include="Controllers\nhthai\ObjectDetailController.cs" />
+    <Compile Include="Global.asax.cs">
+      <DependentUpon>Global.asax</DependentUpon>
+    </Compile>
+    <Compile Include="Models\nhthai\ItemDetails.cs" />
+    <Compile Include="Models\nhthai\ManagerShop.cs" />
+    <Compile Include="Models\nhthai\ObjectDetails.cs" />
+    <Compile Include="obj\Debug\TemporaryGeneratedFile_036C0B5B-1481-4323-8D20-8F5ADCB23D92.cs" />
+    <Compile Include="obj\Debug\TemporaryGeneratedFile_5937a670-0e60-4077-877b-f7221da3dda1.cs" />
+    <Compile Include="obj\Debug\TemporaryGeneratedFile_E7A71F73-0F8D-4B9B-B56E-8E70B10BC5D3.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="obj\Debug\DesignTimeResolveAssemblyReferencesInput.cache" />
+    <Content Include="obj\Debug\MISA.MShopKeeper.csproj.CopyComplete" />
+    <Content Include="obj\Debug\MISA.MShopKeeper.csproj.CoreCompileInputs.cache" />
+    <Content Include="obj\Debug\MISA.MShopKeeper.csprojAssemblyReference.cache" />
+    <Content Include="bin\MISA.MShopKeeper.dll.config" />
+    <Content Include="bin\roslyn\csc.exe.config" />
+    <Content Include="bin\roslyn\csc.rsp" />
+    <Content Include="bin\roslyn\csi.exe.config" />
+    <Content Include="bin\roslyn\csi.rsp" />
+    <Content Include="bin\roslyn\Microsoft.CSharp.Core.targets" />
+    <Content Include="bin\roslyn\Microsoft.Managed.Core.targets" />
+    <Content Include="bin\roslyn\Microsoft.VisualBasic.Core.targets" />
+    <Content Include="bin\roslyn\vbc.exe.config" />
+    <Content Include="bin\roslyn\vbc.rsp" />
+    <Content Include="bin\roslyn\VBCSCompiler.exe.config" />
+    <None Include="packages.config" />
+    <Content Include="Scripts\nhthai\Lib\jquery-ui-1.12.1.custom\package.json" />
+    <None Include="Web.Debug.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </None>
+    <None Include="Web.Release.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="App_Data\" />
+    <Folder Include="Content\nvson\" />
+    <Folder Include="obj\Debug\TempPE\" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\MISA.BL\MISA.BL.csproj">
+      <Project>{828031f2-fe82-4931-bac5-a9ad77b3a55e}</Project>
+      <Name>MISA.BL</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Persistence\MISA.Persistence.csproj">
+      <Project>{f1a17c0c-e540-41d4-8cf1-c75ffc4db8e4}</Project>
+      <Name>MISA.Persistence</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <PropertyGroup>
+    <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
+    <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>
+  </PropertyGroup>
+  <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
+  <Import Project="$(VSToolsPath)\WebApplications\Microsoft.WebApplication.targets" Condition="'$(VSToolsPath)' != ''" />
+  <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v10.0\WebApplications\Microsoft.WebApplication.targets" Condition="false" />
+  <ProjectExtensions>
+    <VisualStudio>
+      <FlavorProperties GUID="{349c5851-65df-11da-9384-00065b846f21}">
+        <WebProjectProperties>
+          <UseIIS>True</UseIIS>
+          <AutoAssignPort>True</AutoAssignPort>
+          <DevelopmentServerPort>57539</DevelopmentServerPort>
+          <DevelopmentServerVPath>/</DevelopmentServerVPath>
+          <IISUrl>http://localhost:57539/</IISUrl>
+          <NTLMAuthentication>False</NTLMAuthentication>
+          <UseCustomServer>False</UseCustomServer>
+          <CustomServerUrl>
+          </CustomServerUrl>
+          <SaveServerSettingsInUserFile>False</SaveServerSettingsInUserFile>
+        </WebProjectProperties>
+      </FlavorProperties>
+    </VisualStudio>
+  </ProjectExtensions>
+  <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
+    <PropertyGroup>
+      <ErrorText>This project references NuGet package(s) that are missing on this computer. Use NuGet Package Restore to download them.  For more information, see http://go.microsoft.com/fwlink/?LinkID=322105. The missing file is {0}.</ErrorText>
+    </PropertyGroup>
+    <Error Condition="!Exists('..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.2.0.0\build\net46\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.2.0.0\build\net46\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props'))" />
+  </Target>
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

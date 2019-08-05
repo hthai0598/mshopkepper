@@ -1,0 +1,88 @@
+﻿/*Thanh navbar
+Create by: nhthai(27/05/2019)*/
+
+
+/*Chia layout cho class navbar*/
+.navbar {
+    display: grid;
+    grid-template-columns: 1fr 7fr 0.9fr 0.2fr 0.2fr;
+    padding: 0;
+    line-height: 50px;
+    background-color: #fff;
+}
+
+    /*Xét padding cho thẻ span trong class navbar*/
+    .navbar span {
+        padding: 7px;
+    }
+
+/*Thêm đường kẻ dọc trái cho class navbar-icon*/
+.navbar-icon {
+    border-left: 1px solid #e1e1e1;
+}
+
+#arrow-downn {
+    left: 25px;
+}
+
+/*Hover đổi màu khi di chuột đến hình chuông(id notification)*/
+#notification:hover {
+}
+
+/*Xét độ dày cho chữ*/
+#navbar-name-shop, #navbar-name-user {
+    font-weight: 600;
+    font-size: 13px;
+}
+
+#navbar-title {
+    font-weight: bold;
+    font-size: 20px;
+}
+
+#navbar-name-shop {
+    border: 1px solid #d0d0d0;
+    border-radius: 4px;
+    padding: 7px 30px 7px 30px;
+    font-weight: 600;
+    font-size: 13px;
+}
+
+
+.toggle-emoloyee {
+    background: white;
+    width: 100%;
+    height: 30px;
+    border: 1px solid #e6e6e6;
+    font-size:13px;
+    display:grid;
+    grid-template-columns:4fr 1fr;
+}
+
+.toggle-emoloyee-gender{
+    display:none;
+    background:#fff;
+    z-index:1111;
+
+    
+}
+
+    .toggle-emoloyee-gender .g:hover {
+        background-color: rgb(2, 107, 151);
+        color:white;
+
+        
+    }
+
+#arrow-employee {
+    position: relative;
+    top: 12px;
+    left: 15px;
+}
+.add-gender {
+    position: relative;
+    top: 4px;
+}
+.g{
+    padding: 4px 8px 4px 8px;
+}

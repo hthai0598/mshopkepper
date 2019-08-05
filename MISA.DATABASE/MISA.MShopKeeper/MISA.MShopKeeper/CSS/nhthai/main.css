@@ -1,0 +1,264 @@
+﻿/*Chia nhỏ các file Css và import ở main.css*/
+@import url('menuflex.css');
+@import url('navbar.css');
+@import url('table.css');
+@import url('table-menu.css');
+@import url('table-content.css');
+@import url('table-description.css');
+@import url('table-details.css');
+@import url('custome-datepicker.css');
+@import url('toggle.css');
+@import url('dialog-insert.css');
+@import url('pagination.css');
+@import url('table-footer.css');
+@import url('dialog-nhacungcap.css');
+@import url('dialog-nvmuahang.css');
+@import url('dialog-chonnhacungcap.css');
+@import url('dialog-delete.css');
+@import url('sidebarmenu.css');
+@import url('dialog-content-group.css');
+
+/*Reset html*/
+.tolltip-error {
+    position: absolute;
+    padding: 4px 8px 4px 8px;
+    border-radius: 4px;
+    background-color: red;
+    z-index: 999;
+    color: white;
+    font-size: 13px;
+    display: none;
+}
+.link:hover{
+    text-decoration: underline;
+    cursor:pointer;
+}
+.table-details {
+    cursor: pointer;
+}
+* {
+    margin: 0;
+    padding: 0;
+}
+
+.yesno {
+    background: #026b97;
+    color: white;
+    font-size: 13px;
+    padding: 7px 7px 7px 7px;
+    border-width: 1px;
+    border-style: solid;
+    min-width: 75px;
+    right: auto;
+    left: 228px;
+    top: 0px;
+    border-radius:4px;
+    margin: 0px;
+}
+    .yesno span {
+        
+        font: 400 12px/16px 'Open Sans','Helvetica Neue',helvetica,arial,verdana,sans-serif;
+        color: #f0f0f0;
+        padding: 0 5px;
+        max-width: 100%;
+    }
+
+.ui-datepicker-trigger {
+    height: 100%;
+}
+.ui-dialog .ui-dialog-content {
+    position: relative;
+    border: 0;
+    padding: .5em 1em;
+    background: none;
+    overflow: auto;
+    padding: 0px;
+}
+.border-error {
+    border: 1px solid red;
+}
+
+.border-true {
+    border: 1px solid #007abc
+}
+
+.ui-dialog {
+    padding: 0 !important;
+}
+
+.border-outline {
+    border: 1px solid #5fa2dd;
+}
+
+#close-dialog-content, .g, #arrow-employee, .toggle-stock-content-element, .pagination-value, .pagination-select, #dialog-insert, .toggle-nhacungcap-content3, #toggle-nhacungcap-content-click2, .toggle-nhacungcap-content-element2, .cursor-menu, .toggle-switch-element, .switch, #uynhiemchi, .listtime-element, .time-icon, .Save, #Help, .button-cancel, .button-save, .button-help, .insert, .fix, .delete, #hoadon, .printf, .help, #close-dialog-watch, .toggle-nhacungcap-content-element, .thugon, .list, #close-dialog-buy, #phieuchi, #phieunhap, #toggle-nhacungcap-content-click, #icon-quicksearch1, #icon-quicksearch2, .dialog-content-icon-plus {
+    cursor: pointer;
+}
+
+.red {
+    color: red;
+}
+
+.row-select1 {
+    background: #c3ecff !important;
+}
+
+button:focus {
+    outline: 0;
+}
+
+.white {
+    background: #fff;
+}
+
+.required {
+    border: 1px solid red !important;
+    height: 32px;
+    outline: none
+}
+
+.required1 {
+    border: 1px solid red !important;
+    width: 507px;
+    height: 32px;
+    outline: none
+}
+
+.load {
+    background: #bdbdbd;
+    overflow: hidden;
+    position: relative;
+    height: 364px;
+    z-index: 100000000000;
+}
+
+    .load img {
+        position: absolute;
+        left: 45%;
+        bottom: 182px;
+    }
+
+/*.load1 {
+    background: #bdbdbd;
+    overflow: hidden;
+    position: relative;
+    height: 364px;
+    z-index: 100000000000;
+}*/
+/*.load1 img {
+    position: absolute;
+    left: 45%;
+    bottom: 182px;
+}*/
+
+
+
+.ui-tooltip {
+    font-size: 13px !important;
+    background: #000000 !important;
+    color: #fff !important;
+    border: none !important;
+    height: 28px !important;
+    padding: 4px !important;
+}
+
+html, body {
+    width: 100%;
+    height: 100%;
+    white-space: nowrap;
+    font-family: 'Roboto',Tahoma,sans-serif
+}
+
+.thead-theadd {
+    position: sticky;
+    top: 0;
+}
+
+.sticky {
+    background: #ffe668a1;
+    position: sticky;
+    bottom: 0;
+    display: grid;
+    font-size: 13px;
+    font-weight: bold;
+    grid-template-columns: 0.2fr 0.8fr 1fr 1fr 1fr 1fr 4fr 15px;
+}
+
+    .sticky div {
+        border: 1px solid #e1e1e1;
+        line-height: 32px;
+        padding-left: 4px;
+        padding-right: 4px;
+        font-size: 13px;
+    }
+
+/*bỏ gạch chân toàn bộ thẻ a*/
+a {
+    text-decoration: none;
+}
+
+.text-align-center {
+    text-align: center;
+}
+
+.text-align-left {
+    text-align: left;
+}
+
+.text-align-right {
+    text-align: right;
+}
+/*Chia layout cho trang*/
+.total {
+    display: grid;
+    grid-template-columns: 1fr 11fr;
+    height: 100%;
+    position: relative;
+}
+/*Xét chiều dài và rộng cho content*/
+.content {
+    height: 100%;
+    width: 100%;
+    background: #e5e6eb;
+}
+
+/*Xét thuộc tính cho class jumbotro*/
+.jumbotro {
+    background: #e5e6eb;
+    height: auto;
+}
+
+.table-all {
+    margin: 8px;
+}
+
+ui-tolltip {
+    background: #000000;
+    color: #fff;
+}
+
+.disabledbutton {
+    pointer-events: none;
+    color: #d0c8c8a8;
+    
+}
+
+.disableinput {
+    pointer-events: none;
+    background: #e5e6eb;
+    font-size: 13px;
+}
+
+.hidden {
+    opacity: 0;
+    z-index: -1;
+    position: relative;
+}
+
+.normal {
+    z-index: 3;
+    background: #c3ecff;
+}
+
+.rowtabmenu {
+    background: #c3ecff;
+}

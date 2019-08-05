@@ -1,0 +1,153 @@
+﻿/*dialog nvmuahang
+Create by: nhthai(27/05/2019)*/
+
+.tabmenu-nvmuahang-header {
+    background: #f6f6f6;
+    display: flex;
+    line-height: 40px;
+    font-size: 13px;
+    font-weight: bold;
+    color: rgb(2, 107, 151);
+    border-bottom: 1px solid rgb(2, 107, 151);
+    border-top: 1px solid #e1e1e1;
+}
+
+.tabmenu-nvmuahang-header-element {
+    font-size: 13px;
+    color: rgb(2, 107, 151);
+    border-bottom: 2px solid rgb(2, 107, 151);
+    border-right: 1px solid #e1e1e1;
+    text-align: center;
+    padding: 0 5px 0 5px;
+    margin: 5px;
+}
+
+
+
+.table-nvmuahang tr td {
+    margin: 0 10px 0 10px;
+    border: none;
+    padding: 5px;
+}
+
+.img-product {
+    width: 138px;
+    height: auto;
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    border: 2px dotted rgb(2, 107, 151);
+}
+
+    .img-product img {
+        width: 138px;
+        height: 116px;
+    }
+
+.input-content-nvmuahang {
+    border: 1px solid #e1e1e1;
+    width: 200px;
+    padding-left: 5px;
+    padding-right: 20px;
+    line-height: 30px;
+}
+
+.input-content-nvmuahang1 {
+    border: 1px solid #e1e1e1;
+    width: 100%;
+    padding-left: 5px;
+    padding-right: 5px;
+    line-height: 30px;
+}
+
+    .input-content-nvmuahang1 input {
+        border: none;
+        outline: none;
+        font-size: 13px;
+        width: 100%;
+    }
+
+.input-content-nvmuahang input {
+    border: none;
+    outline: none;
+    font-size: 13px;
+    width: 100%;
+}
+
+.dialog-content-nvmuahang {
+    height: 550px;
+    margin: 10px;
+}
+
+.dot {
+    background: rgb(2, 107, 151);
+    color: #fff;
+    font-size: 17px;
+    padding: 5px 10px 0 10px;
+    border-radius: 4px;
+}
+
+.radio-check-nvmuahang1 span, .radio-check-nvmuahang2 span {
+    margin: 0 5px 0 5px;
+}
+
+.tab-nvmuahang-hidden {
+    color: #747474;
+    border: none;
+}
+
+    .tab-nvmuahang-hidden:hover {
+        background: #d6d6d6;
+        color: rgb(2, 107, 151);
+    }
+
+.inactive {
+    display: none
+}
+
+.active {
+    display: block;
+}
+
+.s4, td {
+    font-size: 13px;
+}
+
+.img1, .img2 {
+    margin: 0 20px 0 5px;
+}
+
+.icon-helpp {
+    background-image: url(/Content/nhthai/Img/help.png);
+    width: 13px;
+    height: 14px;
+    position: relative;
+    top: 2px;
+    margin: 0 4px 0 4px;
+}
+
+.icon-check-time {
+    position: relative;
+    bottom: 2px;
+}
+
+.start-time-nv input {
+    border: 1px solid #e1e1e1;
+    height: 32px;
+    border-radius: 4px;
+    outline: none;
+    padding: 4px;
+}
+
+
+.end-time-nv input {
+    border: 1px solid #e1e1e1;
+    height: 32px;
+    border-radius: 4px;
+    outline: none;
+    padding: 4px;
+}
+
+.time-hidden {
+    display: none
+}

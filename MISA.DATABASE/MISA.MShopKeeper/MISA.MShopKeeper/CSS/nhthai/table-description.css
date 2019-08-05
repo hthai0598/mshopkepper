@@ -1,0 +1,83 @@
+﻿/*Mô tả tiêu đề của table*/
+/*
+Create by: nhthai(27/05/2019)*/
+
+/*Chia layout cho bảng tiêu đề*/
+.table-description {
+    padding-top: 4px;
+    display: grid;
+    grid-template-columns: 0.2fr 0.8fr 1fr 1fr 1fr 1fr 4fr;
+    position: sticky;
+    top: 0;
+    background: #f6f6f6;
+    /*grid-template-columns: 50px 200px 200px 200px 200px 200px 700px;*/
+    /*display: flex;*/
+}
+
+
+    /*Chỉnh chữ*/
+    .table-description span {
+        font-size: 14px;
+        font-weight: bold;
+    }
+
+div#fill-date-border {
+    background: #fff;
+    border: 1px solid #e1e1e1;
+}
+
+#fill-date {
+    width: 80%;
+    border: none;
+    height: 80%;
+}
+
+/*Chia layout cho từng thành phần của h1 tiêu đề*/
+.table-description-choise {
+    display: flex;
+}
+
+
+    /*set độ dài thẻ input*/
+    .table-description-choise input {
+        width: 100%;
+        border: 1px solid #e6e6e6;
+    }
+
+    /*set độ dài của button*/
+    .table-description-choise span {
+        width: 40px;
+        background: #fff;
+        /*margin: 1px;*/
+        padding: 2px 0 2px 0;
+        border: 1px solid #e1e1e1;
+        position: relative;
+    }
+
+        .table-description-choise span span {
+            border: none;
+            padding: 1px;
+            font-weight: 100;
+            font-size: 12px;
+        }
+
+.table-element-description, .check {
+    border-right: 1px solid #e1e1e1;
+}
+
+/*.table-element-description {
+   max-width: 900px;
+   min-width: 200px;
+}*/
+
+/*Chỉnh checkbox*/
+.check {
+    position: relative;
+    min-width: 36px;
+}
+
+    .check img {
+        position: relative;
+        top: 50%;
+        left: 1px;
+    }

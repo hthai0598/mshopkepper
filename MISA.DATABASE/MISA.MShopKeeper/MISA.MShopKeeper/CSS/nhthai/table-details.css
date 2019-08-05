@@ -1,0 +1,53 @@
+﻿/*chi tiết table*/
+/*
+Create by: nhthai(27/05/2019)*/
+
+.table-details-height {
+    /*height: 200px;*/
+    width: 100%;
+}
+
+.table-details {
+    background: #fff;
+    display: grid;
+    grid-template-columns: 0.2fr 0.8fr 1fr 1fr 1fr 1fr 4fr;
+}
+
+    .table-details div {
+        border-left: 1px solid #e1e1e1;
+        line-height: 34px;
+    }
+
+        .table-details div span {
+            padding-left: 7px;
+            padding-right: 7px;
+        }
+
+.table-details-height .table-details:nth-child(even) {
+    background: #f6f6f6;
+}
+
+.row-selected {
+    background: #c3ecff !important;
+}
+.row-selected1 {
+    background: #c3ecff !important;
+}
+
+.table-details div {
+    padding-left: 7px;
+    padding-right: 7px;
+    font-size: 13px;
+}
+/*.resize11, .resize111, .resize1111, .resize11111, .resize111111, .resize111111 {
+    max-width: 900px;
+    min-width: 200px;
+}*/
+
+.table-details:hover {
+    background-color: #e5f3ff !important;
+}
+
+.link {
+    color: #007ABC
+}

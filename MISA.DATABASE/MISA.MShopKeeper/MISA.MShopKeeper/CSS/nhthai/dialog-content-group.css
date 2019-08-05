@@ -1,0 +1,27 @@
+﻿.dialog-group-content-element {
+    display: grid;
+    grid-template-columns: 1fr 3fr;
+    font-size: 13px;
+    line-height: 41px;
+}
+
+.dialog-input-group input {
+    width: 90%;
+    height: 32px;
+    border: 1px solid #e1e1e1;
+    border-radius: 4px;
+    margin: 5px;
+    outline: none;
+}
+
+.dialog-group-content {
+    margin: 5px 15px 5px 15px;
+    text-align: center;
+}
+
+/*css form edit*/
+.FormEdit .dialog-content-input .none {
+    pointer-events: none;
+    background: #e5e6eb;
+    font-size: 13px;
+}

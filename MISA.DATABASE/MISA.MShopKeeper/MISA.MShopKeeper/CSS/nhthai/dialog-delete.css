@@ -1,0 +1,106 @@
+﻿/*dialog alert Delete
+create by: nhthai(30/05/2019)*/
+.dialog-delete-footer {
+    display: flex;
+    justify-content: flex-end;
+    width: 100%;
+    height: 44px;
+    border: 1px solid #f0f0f0;
+}
+
+.dialog-delete-content {
+    height: 60%;
+    width: 100%;
+    display: flex;
+    padding: 10px;
+}
+
+    .dialog-delete-content p {
+        font-size: 13px;
+        width: 300px;
+        display: block;
+        word-wrap: normal;
+        padding: 10px;
+    }
+
+    .dialog-delete-content span {
+        color: rgb(223, 70, 70);
+    }
+
+.button-delete i {
+    color: #fff;
+    margin: 0 5px 0 5px;
+}
+
+.button-delete {
+    color: #fff;
+    background: rgb(223, 70, 70);
+    outline: none;
+    border: 1px solid rgb(223, 70, 70);
+    border-radius: 4px;
+    height: 35px;
+    font-size: 13px !important;
+    font-weight: bold;
+    padding: 4px 10px 4px 10px;
+    margin: 4px;
+}
+
+.button-dialog-not-save {
+    outline: none;
+    border: 1px solid #026b97;
+    border-radius: 4px;
+    background: #fff;
+    color: #026b97;
+    font-weight: bold;
+    height: 35px;
+    font-size: 13px !important;
+    padding: 4px 10px 4px 10px;
+    margin: 4px;
+}
+
+.button-dialog-save {
+    outline: none;
+    border: 1px solid #026b97;
+    border-radius: 4px;
+    background: #026b97;
+    color: #fff;
+    width: 64.328px;
+    height: 35px;
+    font-size: 13px !important;
+    font-weight: bold;
+    padding: 4px 10px 4px 10px;
+    margin: 4px;
+}
+
+.button-dialog-cancel {
+    background: #fff;
+    color: #026b97;
+    border: 1px solid #fff;
+    border-radius: 4px;
+    font-size: 13px;
+    font-weight: bold;
+    padding-right: 6px;
+    height: 35px;
+    font-size: 13px !important;
+    padding: 4px 10px 4px 10px;
+    margin: 4px;
+}
+
+.button-dialog-save i {
+    margin: 0 4px 0 2px
+}
+
+.button-dialog-not-save img {
+    position: relative;
+    top: -3px;
+}
+
+.button-dialog-cancel i {
+    margin: 0 4px 0 2px
+}
+
+.img-note {
+    background: url('/Content/nhthai/Img/icon-popup.png') no-repeat -169px -3px;
+    width: 38px;
+    height: 38px;
+}

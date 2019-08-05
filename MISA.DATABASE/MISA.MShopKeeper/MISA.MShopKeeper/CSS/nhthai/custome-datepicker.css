@@ -1,0 +1,23 @@
+﻿
+/*custome lại datepicker
+Create ruby:Nhthai(30/05/2019)*/
+.ui-datepicker .ui-datepicker-header {
+    background: #006189;
+    color: #fff;
+}
+
+.ui-datepicker-calendar thead tr {
+    background: #f6f6f6;
+}
+
+    .ui-datepicker-calendar thead tr th span {
+        color: black;
+        font-size: 13px;
+        font-weight: 200;
+    }
+
+.ui-datepicker-trigger {
+    background: url('/Content/nhthai/Img/common-icon.png') 0 -169px;
+    border: none;
+    width: 20px;
+}

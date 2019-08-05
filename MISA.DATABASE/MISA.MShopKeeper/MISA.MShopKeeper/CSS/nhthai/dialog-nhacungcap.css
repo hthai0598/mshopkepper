@@ -1,0 +1,117 @@
+﻿/*dialog nhacungcap
+Create by: nhthai(27/05/2019)*/
+
+.dialog-nhacungcap-header > div {
+    float: left;
+    margin: 2px;
+    height: 30px;
+    font-size: 13px;
+}
+
+.dialog-nhacungcap-header {
+    margin: 5px 15px 5px 15px;
+}
+
+#dialog-nhacungcap-choise1 {
+    background: url('/Content/nhthai/Img/radio-check.png') no-repeat;
+    width: 18px;
+    height: 18px;
+}
+
+#dialog-nhacungcap-choise2 {
+    background: url('/Content/nhthai/Img/radio-uncheck.png') no-repeat;
+    width: 18px;
+    height: 18px;
+}
+
+.dialog-nhacungcap-content td {
+    border: 1px;
+}
+
+    .dialog-nhacungcap-content td input {
+        border: none;
+        outline: none;
+        width: 100%;
+        padding: 8px;
+    }
+
+    .dialog-nhacungcap-content td div {
+        border: 1px solid #e1e1e1;
+        /*border-radius: 4px;*/
+        margin: 5px;
+    }
+
+.dialog-nhacungcap-content table {
+    margin: 0 20px 0 20px;
+}
+
+.thead-thead th, td {
+    border: 1px solid #e1e1e1;
+    font-size: 13px;
+    line-height: 20px;
+}
+
+
+.icon-help {
+    background-image: url('/Content/nhthai/Img/help.png');
+    width: 13px;
+    height: 14px;
+    position: relative;
+    top: 8px;
+}
+
+.footer-nhacungcap1 {
+    display: grid;
+    margin: 5px 15px 5px 15px;
+    line-height: 30px;
+    grid-template-columns: 0.5fr 1fr 6fr 1fr 1fr;
+}
+
+.button-save {
+    background: #026b97;
+    border: 1px solid #026b97;
+    color: white;
+    margin-right: 10px;
+    border-radius: 4px;
+    font-size: 13px;
+    font-weight: bold;
+    padding: 0 8px 0 0;
+}
+
+.button-cancel i {
+    margin: 0 10px 0 10px;
+}
+
+.button-save i {
+    margin: 0 5px 0 5px;
+}
+
+.button-cancel {
+    background: #fff;
+    color: #026b97;
+    border: 1px solid #fff;
+    border-radius: 4px;
+    font-size: 13px;
+    font-weight: bold;
+    padding-right: 6px;
+    font-size: 13px !important;
+}
+
+    .button-cancel:hover {
+        border: 1px solid #026b97;
+        border-radius: 4px;
+    }
+
+.button-save:hover {
+    background: #0088c2;
+    border-radius: 4px;
+}
+
+#dialog-nhacungcap-table2 {
+    display: none;
+}
+
+.dialog-nhacungcap-content .dialog-content-icon-plus {
+    padding: 5px 5px 0 5px;
+    margin: 0;
+}

@@ -1,0 +1,2164 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <!--Bootstrap-->
+    <script src="/Scripts/nhthai/Lib/jquery-3.3.1.slim.min.js"></script>
+    <script src="/Scripts/nhthai/Lib/popper.min.js"></script>
+    <link href="/Scripts/nhthai/Lib/bootstrap.min.css" rel="stylesheet" />
+
+    <!--Css jquery contextmenu-->
+    <link href="/Scripts/nhthai/Lib/jquery.contextMenu.min.css" rel="stylesheet" />
+    <!--Css jqueryui-->
+    <link href="/Scripts/nhthai/Lib/jquery-ui.css" rel="stylesheet" />
+    <link href="/Scripts/nhthai/Lib/jquery-ui-1.12.1.custom/jquery-ui.theme.min.css" rel="stylesheet" />
+    <!--Css fontAwesome-->
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css">
+
+
+    <!--Css tự viết-->
+    <link href="/CSS/nhthai/main.css" rel="stylesheet" />
+    <link rel="shortcut icon" href="#">
+
+    <title></title>
+
+</head>
+
+<body>
+    <!--Toggle-->
+    <div class="toggle-nhacungcap2" style="display:none">
+        <div class="toggle-nhacungcap-title2">
+            <div ObjectDetailMini2="SKUCode">Mã SUK</div>
+            <div ObjectDetailMini2="">Mã vạch</div>
+            <div ObjectDetailMini2="InventoryItemName">Tên hàng hóa</div>
+        </div>
+
+        <div class="toggle-nhacungcap-content2 ">
+            <div class="toggle-nhacungcap-content-element2">
+
+            </div>
+        </div>
+    </div>
+
+
+    <!--Toggle-->
+    <div class="toggle-stock" style="display:none">
+        <div class="toggle-stock-title">
+            <div StockFlied="StockName">Mã kho</div>
+            <div StockFlied="StockName">Tên kho</div>
+        </div>
+        <div class="toggle-stock-content">
+            <div class="toggle-stock-content-element">
+
+            </div>
+        </div>
+    </div>
+
+
+    <div class="tolltip-error tolltip-requaid">Trường này không được để trống</div>
+    <div class="tolltip-error tolltip-date-error">Định dạng ngày tháng không hợp lệ <br /> Vui lòng nhập đúng định dạng dd/mm/yyy </div>
+    <div class="tolltip-error tolltip-time-error">Đây không phải giá trị thời gian </div>
+
+    <!--HTML dialog insert-->
+    <div style="display:none" class="dialog-content">
+        <form class="form_id">
+            <div class="dialog-content-navbar">
+                <div id="dialog-content-navbar1" class="dialog-navbar">
+
+                    <div class="disabledbutton"><i class="fas fa-arrow-left"></i><span>Trước</span></div>
+                    <div class="disabledbutton"><i class="fas fa-caret-down fa-xs"></i></div>
+
+                    <div class="disabledbutton"><span style="margin-right: 10px;">Sau</span><i class="fas fa-arrow-right"></i></div>
+
+                    <div class="disabledbutton"><i class="fas fa-caret-down fa-xs"></i></div>
+                </div>
+
+                <div id="dialog-content-navbar2" class="dialog-navbar">
+                    <div class="disabledbutton"><i class="fas fa-plus fa-xs"></i><span>Thêm mới</span></div>
+                    <div class="disabledbutton"><i class="fas fa-pen fa-xs"></i><span>Sửa</span></div>
+                    <div id="Save" class="Save" title="Ctrl + S"><i class="fas fa-save fa-xs"></i><span>Lưu</span></div>
+                    <div class="disabledbutton" title="Ctrl + D"><i class="fas fa-trash fa-xs"></i><span>Xóa</span></div>
+                    <div class="disabledbutton"><i class="fas fa-undo fa-xs"></i><span>Hoãn</span></div>
+
+                </div>
+
+                <div id="dialog-content-navbar3" class="dialog-navbar">
+                    <div class="disabledbutton"><i class="fas fa-print fa-xs"></i><span>in</span></div>
+                    <div class="disabledbutton"><i class="fas fa-caret-down fa-xs"></i></div>
+                </div>
+
+                <div id="dialog-content-navbar4" class="dialog-navbar">
+                    <div class="disabledbutton"><i class="fas fa-cloud-download-alt fa-xs"></i><span>Xuất khẩu</span></div>
+                    <div title="F1" id="Help"><i class="fas fa-question-circle fa-xs"></i><span>Trợ giúp</span></div>
+                    <div id="close-dialog-content" title="Ctrl + Q"><i class="fas fa-times fa-xs"></i><span>Đóng</span></div>
+                </div>
+            </div>
+
+            <div class="dialog-content-details">
+
+                <div class="dialog-content-details-choise">
+                    <div class="text-left">
+                        <div id="dialog-content-details-choise1" class="dialog-choise1 c1"></div>
+                        <div class="dialog-text"><span>Ghi nợ nhà cung cấp</span></div>
+                    </div>
+
+                    <div class="text-left">
+                        <div id="dialog-content-details-choise2" class="dialog-choise2 c2"></div>
+                        <div class="dialog-text"><span>Thanh toán ngay</span></div>
+                        <div id="dialog-content-tienmat"><span class="text-switch">Tiền mặt</span><img class="switch" style="visibility:hidden;position: relative;top: 2px;left: 54px;object-fit: contain;" src="/Content/nhthai/Img/arrow-down-line.png" /></div>
+
+                    </div>
+
+
+                    <div class="text-right">
+                        <img class="check-img check-img1" src="/Content/nhthai/Img/uncheck.png" style="position:relative; bottom: -10px; width:20px;height:20px">
+                        <div class="dialog-text"><span>Nhận kèm hóa đơn</span></div>
+                    </div>
+
+                </div>
+                <div style="display:none" class="toggle-switch">
+                    <div class="toggle-switch-element" id="tienmat">Tiền mặt</div>
+                    <div class="toggle-switch-element" id="tiengui">Tiền gửi</div>
+                </div>
+                <div class="dialog-content-details-des">
+                    <div>
+                        <div class="dialog-text" id="phieunhap"><span class="color-tab">Phiếu nhập</span></div>
+                    </div>
+                    <div>
+                        <div style="display:none" class="dialog-text" id="phieuchi"><span class="color-tab1">Phiếu chi</span></div>
+                    </div>
+                    <div>
+                        <div style="display:none" class="dialog-text" id="uynhiemchi"><span class="color-tab1">Ủy nhiệm chi</span></div>
+                    </div>
+                    <div>
+                        <div style="display:none" class="dialog-text" id="hoadon"><span class="color-tab1">Hóa đơn</span></div>
+                    </div>
+
+                </div>
+
+                <div class="dialog-content-details-info1">
+                    <div id="dialog-content-details-info-col1">
+
+                        <div class="dialog-content-details-info-title"><span>Thông tin chung</span></div>
+
+
+                        <div class="dialog-content-details-info-input">
+                            <div class="dialog-text"><span>Nhà cung cấp</span></div>
+                            <div class="dialog-content-input none">
+
+                                <input readonly data-1 id="Code" class="item1 none clear-value" type="text" name="name" value="" />
+                                <div style="position: relative" id="toggle-nhacungcap-content-click" class="none">
+
+                                    <img src="/Content/nhthai/Img/arrow-down-line.png" />
+                                    <div class="toggle-nhacungcap">
+                                        <div class="toggle-nhacungcap-title">
+                                            <div ObjectDetailMini="VendorCode">Mã nhà cung cấp</div>
+                                            <div ObjectDetailMini="VendorName">Tên nhà cung cấp</div>
+                                        </div>
+                                        <div id="toggle-nhacungcap-content" style="padding:0" class="toggle-nhacungcap-content">
+
+                                        </div>
+
+                                    </div>
+
+                                </div>
+                                <div id="icon-quicksearch1" class="none"> <img style="position: relative;top: 3px;" src="/Content/nhthai/Img/Quick-search.png" /></div>
+                                <div id="dialog-content-icon-plus1" class="dialog-content-icon-plus none"><i class="fas fa-plus fa-xs"></i></div>
+                            </div>
+                            <div class="dialog-content-input">
+                                <input readonly data-2 id="AccountObjectName" class="item2 none clear-value" type="text" name="name"
+                                       value="" />
+                            </div>
+
+                        </div>
+
+
+
+                        <div class="dialog-content-details-info-input1">
+                            <div class="dialog-text"><span>Người giao</span></div>
+                            <div class="dialog-content-input"><input data-3 id="ContactName"  type="text" name="name" value="" /></div>
+                        </div>
+
+                        <div class="dialog-content-details-info-input1">
+                            <div class="dialog-text"><span>Diễn giải</span></div>
+                            <div class="dialog-content-input"><input data-4 id="JournalMemo" type="text" name="name" value=" " /></div>
+                        </div>
+
+                        <div class="dialog-content-details-info-input">
+                            <div title="Nhân viên mua hàng" class="dialog-text"><span>NV mua hàng</span></div>
+                            <div class="dialog-content-input">
+                                <input data-5 readonly class="codestaff clear-value1" id="EmployeeName" type="text" name="name" value="" />
+                                <div id="toggle-nhacungcap-content-click2">
+                                    <img style="position:relative;top:3px" src="/Content/nhthai/Img/arrow-down-line.png" />
+                                    <div class="toggle-nhacungcap3">
+                                        <div class="toggle-nhacungcap-title3">
+                                            <div ObjectDetailMini3="EmployeeCode">Mã nhà nhân viên</div>
+                                            <div ObjectDetailMini3="EmployeeName">Tên nhân viên</div>
+                                        </div>
+                                        <div style="padding:0" class="toggle-nhacungcap-content3">
+                                            <div class="toggle-nhacungcap-content-element3"></div>
+                                        </div>
+
+                                    </div>
+
+                                </div>
+                                <div id="icon-quicksearch2"> <img style="position:relative;top:3px" src="/Content/nhthai/Img/Quick-search.png" /></div>
+                                <div class="dialog-content-icon-plus" id="dialog-content-icon-plus2"><i class="fas fa-plus fa-xs"></i></div>
+                            </div>
+                            <div class="dialog-content-input disabledbutton">
+                                <input data-6 class="namestaff clear-value1" readonly style="background:#e5e6eb"
+                                       type="text" name="name" value="" />
+                            </div>
+                        </div>
+                        <div class="dialog-text"><span>Tham chiếu</span></div>
+                    </div>
+
+                    <div id="dialog-content-details-info-col2">
+                        <div class="dialog-content-details-info-title"><span>Chứng từ</span></div>
+                        <div class="dialog-content-details-info-input2">
+                            <div class="dialog-text"><span>Số phiếu nhập</span></div>
+                            <div class="dialog-content-input error-container none"><div style="padding: 0px;" class="check-code none"><input style="position: relative;top: 2px;"  data-7 notnull id="RefNo-Code" type="text" name="name" class="code-value none" /></div><img style="object-fit:contain;display:none" class="error" src="/Content/nhthai/Img/exclamation.png" /></div>
+
+                        </div>
+                        <div class="dialog-content-details-info-input2">
+                            <div class="dialog-text"><span>Ngày nhập</span></div>
+                            <div class="dialog-content-input error-container">
+
+                                <div style="padding: 0px;" class="none">
+                                    <input  data-8 style="width:85%; height:100%" notnull RefDatee class="datepicker date-choise abc date-value none" type="text"
+                                           name="name" value="" />
+                                </div>
+
+                                <img style="object-fit:contain; display:none" class="error" src="/Content/nhthai/Img/exclamation.png" />
+
+                            </div>
+                        </div>
+                        <div class="dialog-content-details-info-input2">
+                            <div class="dialog-text"><span>Giờ nhập</span></div>
+                            <div class="dialog-content-input error-container">
+                                <div style="display:flex;padding: 0px;" class="none">
+                                    <input data-9 style="width:86%" notnull type="text" name="name" value="" class="timepicker abc time-value none" />
+                                    <div class="sprite time-icon"></div>
+                                </div>
+                                <img style="object-fit:contain; display:none" class="error" src="/Content/nhthai/Img/exclamation.png" />
+
+                                <div class="listtime">
+                                    <div class="listtime-element">00:00</div>
+                                    <div class="listtime-element">00:15</div>
+                                    <div class="listtime-element">00:30</div>
+                                    <div class="listtime-element">00:45</div>
+                                    <div class="listtime-element">01:00</div>
+                                    <div class="listtime-element">01:15</div>
+                                    <div class="listtime-element">01:30</div>
+                                    <div class="listtime-element">01:45</div>
+                                    <div class="listtime-element">02:00</div>
+                                    <div class="listtime-element">02:15</div>
+                                    <div class="listtime-element">02:30</div>
+                                    <div class="listtime-element">00:45</div>
+                                    <div class="listtime-element">03:00</div>
+                                    <div class="listtime-element">03:15</div>
+                                    <div class="listtime-element">03:30</div>
+                                    <div class="listtime-element">03:45</div>
+                                </div>
+                            </div>
+                            <!--<input  type="text" id="focus-insert1" name="name" value="" />-->
+                        </div>
+
+                    </div>
+
+                </div>
+                <div class="dialog-content-details-info2" style="display:none">
+                    <div id="dialog-content-details-info-col1">
+
+                        <div class="dialog-content-details-info-title"><span>Thông tin chung</span></div>
+
+
+                        <div class="dialog-content-details-info-input">
+                            <div class="dialog-text"><span>Nhà cung cấp</span></div>
+                            <div class="dialog-content-input">
+
+                                <input class="item1" type="text" name="name" value="" />
+                                <div style="position: relative;top: 3px;" id="toggle-nhacungcap-content-click">
+
+                                    <img src="/Content/nhthai/Img/arrow-down-line.png" />
+                                    <div class="toggle-nhacungcap">
+                                        <div class="toggle-nhacungcap-title">
+                                            <div>Mã nhà cung cấp</div>
+                                            <div>Tên nhà cung cấp</div>
+                                        </div>
+                                        <div id="toggle-nhacungcap-content" style="padding:0" class="toggle-nhacungcap-content">
+
+                                        </div>
+
+                                    </div>
+
+                                </div>
+                                <div id="icon-quicksearch1"> <img style="position: relative;top: 3px;" src="/Content/nhthai/Img/Quick-search.png" /></div>
+                                <div id="dialog-content-icon-plus1" class="dialog-content-icon-plus"><i class="fas fa-plus fa-xs"></i></div>
+                            </div>
+                            <div class="dialog-content-input">
+                                <input id="AccountObjectName" class="item2" type="text" name="name"
+                                       value="" />
+                            </div>
+
+                        </div>
+
+
+
+                        <div class="dialog-content-details-info-input1">
+                            <div class="dialog-text"><span>Người giao</span></div>
+                            <div class="dialog-content-input"><input type="text" name="name" value="" /></div>
+                        </div>
+
+                        <div class="dialog-content-details-info-input1">
+                            <div class="dialog-text"><span>Địa chỉ</span></div>
+                            <!--id="JournalMemo"-->
+                            <div class="dialog-content-input"><input type="text" name="name" value="" /></div>
+                        </div>
+
+                        <div class="dialog-content-details-info-input1">
+                            <div title="Nhân viên mua hàng" class="dialog-text"><span>Lý do chi</span></div>
+                            <div class="dialog-content-input"><input type="text" name="name" value="Thanh toán tiền nhập hàng hóa" /></div>
+                        </div>
+
+                    </div>
+
+                    <div id="dialog-content-details-info-col2">
+                        <div class="dialog-content-details-info-title"><span>Chứng từ</span></div>
+                        <div class="dialog-content-details-info-input2">
+                            <div class="dialog-text"><span>Số phiếu chi</span></div>
+                            <div class="dialog-content-input error-container"><div style="padding: 0px;" class="check-code"><input notnull value="PC0000001" type="text" name="name" class="code-value" /></div><img style="object-fit:contain;display:none" class="error" src="/Content/nhthai/Img/exclamation.png" /></div>
+                        </div>
+                        <div class="dialog-content-details-info-input2">
+                            <div class="dialog-text"><span>Ngày nhập</span></div>
+                            <div class="dialog-content-input error-container">
+
+                                <div style="padding: 0px;">
+                                    <input style="width:85%; height:100%" notnull class="datepicker date-choise abc date-value" type="text"
+                                           name="name" value="" />
+                                </div>
+
+                                <img style="object-fit:contain; display:none" class="error" src="/Content/nhthai/Img/exclamation.png" />
+
+                            </div>
+                        </div>
+
+                    </div>
+
+                </div>
+                <div class="dialog-content-details-info3" style="display:none">
+                    <div id="dialog-content-details-info-col1">
+
+                        <div class="dialog-content-details-info-title"><span>Thông tin chung</span></div>
+
+
+                        <div class="dialog-content-details-info-input">
+                            <div class="dialog-text"><span>Nhà cung cấp</span></div>
+                            <div class="dialog-content-input">
+
+                                <input type="text" name="name" value="" /><!--class="item1"-->
+                                <div style="position: relative;top: 3px;" id="toggle-nhacungcap-content-click3">
+
+                                    <img src="/Content/nhthai/Img/arrow-down-line.png" />
+                                    <div class="toggle-nhacungcap">
+                                        <div class="toggle-nhacungcap-title">
+                                            <div>Mã nhà cung cấp</div>
+                                            <div>Tên nhà cung cấp</div>
+                                        </div>
+                                        <div id="toggle-nhacungcap-content" style="padding:0" class="toggle-nhacungcap-content">
+
+                                        </div>
+
+                                    </div>
+
+                                </div>
+                                <div id="icon-quicksearch1"> <img style="position: relative;top: 3px;" src="/Content/nhthai/Img/Quick-search.png" /></div>
+                                <div id="dialog-content-icon-plus1" class="dialog-content-icon-plus"><i class="fas fa-plus fa-xs"></i></div>
+                            </div>
+                            <div class="dialog-content-input">
+                                <input type="text" name="name" value="" /> <!--id="AccountObjectName"--> <!--class="item2"-->
+                            </div>
+
+                        </div>
+
+
+
+                        <div class="dialog-content-details-info-input1">
+                            <div class="dialog-text"><span>Địa chỉ</span></div>
+                            <div class="dialog-content-input"><input type="text" name="name" value="" /></div>
+                        </div>
+
+                        <div class="dialog-content-details-info-input1">
+                            <div class="dialog-text"><span>Mã số thuế</span></div>
+                            <!--id="JournalMemo"-->
+                            <div class="dialog-content-input"><input type="text" name="name" value="" /></div>
+                        </div>
+
+
+
+                    </div>
+
+                    <div id="dialog-content-details-info-col2">
+                        <div class="dialog-content-details-info-title"><span>Hóa đơn</span></div>
+                        <div class="dialog-content-details-info-input2">
+                            <div class="dialog-text"><span>Số hóa đơn</span></div>
+                            <div class="dialog-content-input error-container"><div style="padding: 0px;" class="check-code"><input notnull value="HD0000001" type="text" name="name" class="code-value" /></div><img style="object-fit:contain;display:none" class="error" src="/Content/nhthai/Img/exclamation.png" /></div>
+                        </div>
+                        <div class="dialog-content-details-info-input2">
+                            <div class="dialog-text"><span>Ngày nhập</span></div>
+                            <div class="dialog-content-input error-container">
+
+                                <div style="padding: 0px;">
+                                    <input style="width:85%; height:100%" notnull class="datepicker date-value1" type="text"
+                                           name="name" value="" />
+                                </div>
+
+                                <img style="object-fit:contain; display:none" class="error" src="/Content/nhthai/Img/exclamation.png" />
+
+                            </div>
+                        </div>
+
+
+                    </div>
+
+                </div>
+                <div class="dialog-content-details-info4" style="display:none">
+                    <div id="dialog-content-details-info-col1">
+
+                        <div class="dialog-content-details-info-title"><span>Thông tin chung</span></div>
+
+
+                        <div class="dialog-content-details-info-input">
+                            <div class="dialog-text"><span>Nhà cung cấp</span></div>
+                            <div class="dialog-content-input">
+
+                                <input class="item1" type="text" name="name" value="" />
+                                <div style="position: relative;top: 3px;" id="toggle-nhacungcap-content-click3">
+
+                                    <img src="/Content/nhthai/Img/arrow-down-line.png" />
+                                    <div class="toggle-nhacungcap">
+                                        <div class="toggle-nhacungcap-title">
+                                            <div>Mã nhà cung cấp</div>
+                                            <div>Tên nhà cung cấp</div>
+                                        </div>
+                                        <div id="toggle-nhacungcap-content" style="padding:0" class="toggle-nhacungcap-content">
+
+                                        </div>
+
+                                    </div>
+
+                                </div>
+                                <div id="icon-quicksearch1"> <img style="position: relative;top: 3px;" src="/Content/nhthai/Img/Quick-search.png" /></div>
+                                <div id="dialog-content-icon-plus1" class="dialog-content-icon-plus"><i class="fas fa-plus fa-xs"></i></div>
+                            </div>
+                            <div class="dialog-content-input">
+                                <input id="AccountObjectName" class="item2" type="text" name="name"
+                                       value="" />
+                            </div>
+
+                        </div>
+
+
+
+                        <div class="dialog-content-details-info-input1">
+                            <div class="dialog-text"><span>Địa chỉ</span></div>
+                            <div class="dialog-content-input"><input type="text" name="name" value="" /></div>
+                        </div>
+
+                        <div class="dialog-content-details-info-input1">
+                            <div class="dialog-text"><span>Nội dung TT</span></div>
+                            <!--id="JournalMemo"-->
+                            <div class="dialog-content-input"><input type="text" name="name" value="" /></div>
+                        </div>
+
+
+
+                    </div>
+
+                    <div id="dialog-content-details-info-col2">
+                        <div class="dialog-content-details-info-title"><span>Hóa đơn</span></div>
+                        <div class="dialog-content-details-info-input2">
+                            <div class="dialog-text"><span>Số phiếu chi</span></div>
+                            <div class="dialog-content-input error-container"><div style="padding: 0px;" class="check-code"><input notnull value="UNC0000001" type="text" name="name" class="code-value" /></div><img style="object-fit:contain;display:none" class="error" src="/Content/nhthai/Img/exclamation.png" /></div>
+                        </div>
+                        <div class="dialog-content-details-info-input2">
+                            <div class="dialog-text"><span>Ngày nhập</span></div>
+                            <div class="dialog-content-input error-container">
+
+                                <div style="padding: 0px;">
+                                    <input style="width:85%; height:100%" notnull class="datepicker date-choise abc date-value" type="text"
+                                           name="name" value="" />
+                                </div>
+
+                                <img style="object-fit:contain; display:none" class="error" src="/Content/nhthai/Img/exclamation.png" />
+
+                            </div>
+                        </div>
+
+
+                    </div>
+
+                </div>
+
+                <div class="text-center thugon">
+                    Thu gọn <div class="icon-collapse"></div>
+                </div>
+            </div>
+
+
+
+            <div class="dialog-footer">
+
+                <div class="dialog-footer-title">
+                    <div class="dialog-content-details-info-title"><span>CHI TIẾT</span></div>
+                    <div></div>
+                    <div class="dialog-footer-flex-right">
+                        <img class="check-img" src="/Content/nhthai/Img/uncheck.png" style="position:relative; bottom: 0px; width:20px;height:20px">
+                        <div class="a"><span>Quét mã vạch</span></div>
+                        <div id="img-footer-dialog"></div>
+                        <div class="a"><span>Nhập khẩu</span></div>
+                    </div>
+                </div>
+                <div class="dialog-footer-content">
+                    <div class="dialog-footer-th">
+                        <div WatchData1="SKUCode"><span>Mã SKU</span></div>
+                        <div WatchData1="InventoryItemName"><span>Tên hàng hóa</span></div>
+                        <div WatchData1="StockName"><span>Kho</span></div>
+                        <div WatchData1="UnitName"><span>Đơn vị tính</span></div>
+                        <div WatchData1="Quantity"><span>Số lượng</span></div>
+                        <div WatchData1="CostPrice"><span>Đơn giá</span></div>
+                        <div WatchData1="Amount"><span>Thành tiền</span></div>
+                        <div WatchData1="DiscountRate"><span>% CK</span></div>
+                        <div WatchData1="DiscountAmount"><span>Tiền CK</span></div>
+                        <div WatchData1="VATRate"><span>Thuế suất</span></div>
+                        <div WatchData1="VATAmount"><span>Tiền thuế</span></div>
+                        <div WatchData1="PayAmount"><span>Tiền thanh toán</span></div>
+                        <div WatchData1><span></span></div>
+                    </div>
+
+
+
+                    <div class="appendShow1">
+                        <div class="dialog-footer-td notdelete">
+
+                            <div class="dialog-footer-td-element dialog-footer-td-element-special ">
+
+                                <input fielditemname1="SKUCode" class="hidden ip-first item0" type="text" name="tabmenuinput" id="focus-tabindex1" value=""
+                                       placeholder="Tìm mã hoặc tên" />
+                                <img class="hidden cursor-menu arrow-toggle-nhacungcap-content2" contentEditable src="/Content/nhthai/Img/arrow-down-line.png" />
+
+                                <img class="hidden cursor-menu " src="/Content/nhthai/Img/Quick-search.png" contentEditable />
+                                <div class="dialog-content-icon-plus hidden cursor-menu" style="float:right"><i class="fas fa-plus fa-xs" contentEditable></i></div>
+                            </div>
+
+                            <div class="dialog-footer-td-element noclick"><span style="font-weight:200;padding-left:10px;" fielditemname1="InventoryItemName"></span></div>
+                            <div class="dialog-footer-td-element dialog-footer-td-element-special disabledbutton">
+                                <input readonly fielditemname2="StockName" style="text-overflow: ellipsis;" class="addrow1 revalue" type="text"
+                                       value="" name="tabmenuinput1" /> <img class="hidden cursor-menu stock-arrow" src="/Content/nhthai/Img/arrow-down-line.png" contentEditable />
+                            </div>
+                            <div class="dialog-footer-td-element dialog-footer-td-element-special ">
+                                <input  fielditemname1="UnitName" class="addrow1 text-right revalue" type="text"
+                                       value="" name="tabmenuinput2" /> <img class="hidden cursor-menu" id="arrow-down-paginationn" src="/Content/nhthai/Img/arrow-down-line.png" contentEditable />
+                            </div>
+
+                            <div class="dialog-footer-td-element dialog-footer-td-element-special">
+                                <input readonly fielditemname2="Quantity" class=" text-right addrow number coculator define" value="0" type="number" name="name" min="0" onkeypress='validate(event)' />
+                            </div>
+                            <div class="dialog-footer-td-element dialog-footer-td-element-special">
+                                <input fielditemname1="CostPrice" class="text-right addrow number current-money coculator define" value="0" type="text" onkeypress='validate(event)'
+                                       name="name" />
+                            </div>
+                            <div class="dialog-footer-td-element dialog-footer-td-element-special">
+                                <input fielditemname2="Amount" class=" text-right addrow number current-money coculator define" value="0" type="text"
+                                       name="name" />
+                            </div>
+                            <div class="dialog-footer-td-element dialog-footer-td-element-special">
+                                <input fielditemname2="DiscountRate" class="text-right addrow coculator define" onkeypress='return event.charCode >= 48 && event.charCode <= 57' oninput="changeHandler(this)" value="0" type="number"
+                                       name="name" min="0" />
+                            </div>
+                            <div class="dialog-footer-td-element text-right " style="padding:0 4px 0 5px"><div fielditemname2="DiscountAmount" style="border:none" data-type="number">0</div></div>
+                            <div class="dialog-footer-td-element dialog-footer-td-element-special">
+                                <input fielditemname2="VATRate" class=" text-right addrow ip-last coculator define" min="0" max="100" onkeypress='return event.charCode >= 48 && event.charCode <= 57' oninput="changeHandler(this)" value="0" type="number"
+                                       name="name" />
+                            </div>
+                            <div class="dialog-footer-td-element text-right number" style="padding:0 4px 0 5px">
+                                <div class="define" fielditemname2="VATAmount" style="border:none" data-type="number">0</div>
+                            </div>
+                            <div class="dialog-footer-td-element text-right number define" style="padding:0 4px 0 5px"><div fielditemname2="PayAmount" style="border:none" data-type="number">0</div></div>
+                            <div class="icon-tabmenu">
+                                <div class="text-center icon-tabmenu-element"><img src="/Content/nhthai/Img/copy-down.png" /></div>
+                                <div class="text-center icon-tabmenu-element remove-row"><i class="fas fa-trash" style="color:red"></i></div>
+                            </div>
+                        </div>
+                      </div>
+
+                    </div>
+                    <div class="dialog-insert-footer-revenul">
+                        <div class="dialog-insert-footer-revenul-element">Tổng số lượng: <span>0</span></div>
+                        <div class="dialog-insert-footer-revenul-element">Tổng thành tiền: <span>0</span></div>
+                        <div class="dialog-insert-footer-revenul-element">Tổng tiền CK: <span>0</span></div>
+                        <div class="dialog-insert-footer-revenul-element">Tiền thuế: <span>0</span></div>
+                        <div class="dialog-insert-footer-revenul-element">Tổng tiền thanh toán: <span>0</span></div>
+                    </div>
+
+                </div>
+
+        </form>
+    </div>
+
+    <!--HTML dialog chonnhacungcap(dialog con dialog inssert)-->
+    <div class="dialog-chonnhacungcap" style="display:none">
+        <div class="dialog-chonnhacungcap-header">
+            <div class="dialog-chonnhacungcap-header-element1"><span>Loại đối tượng xuất</span></div>
+            <div class="dialog-chonnhacungcap-header-element2"><span>Nhà cung cấp</span><img id="arrow-downn" src="/Content/nhthai/Img/arrow-down-line.png" /></div>
+            <div class="dialog-chonnhacungcap-header-element3"><input type="text" name="name" value="" placeholder="Nhập mã nhà cung cấp, tên nhà cung cấp" /></div>
+            <div class="dialog-chonnhacungcap-header-element4">
+                <i style="margin: 0 5px 0 0;position: relative;bottom: 1px;"
+                   class="fas fa-search fa-xs"></i><span>Tìm kiếm</span>
+            </div>
+        </div>
+
+        <div class="dialog-chonnhacungcap-content">
+            <div class="dialog-chonnhacungcap-content-title">
+                <div ObjectDetail="" class="dialog-chonnhacungcap-content-title-element1"></div>
+                <div ObjectDetail="VendorCode" class="dialog-chonnhacungcap-content-title-element2">Mã nhà cung cấp</div>
+                <div ObjectDetail="VendorName" class="dialog-chonnhacungcap-content-title-element3">Tên nhà cung cấp</div>
+                <div ObjectDetail="ContactName" class="dialog-chonnhacungcap-content-title-element4">Loại đối tượng xuất</div>
+                <div ObjectDetail="ContactAddress" class="dialog-chonnhacungcap-content-title-element5">Địa chỉ</div>
+            </div>
+
+            <div class="dialog-chonnhacungcap-content-des">
+                <!--<div class="dialog-chonnhacungcap-content-des-element"><input type="radio" name="name" value="" /></div>
+                <div class="dialog-chonnhacungcap-content-des-element">s</div>
+                <div class="dialog-chonnhacungcap-content-des-element">s</div>
+                <div class="dialog-chonnhacungcap-content-des-element">s</div>
+                <div class="dialog-chonnhacungcap-content-des-element">s</div>-->
+            </div>
+
+        </div>
+        <div class="paginationn">
+
+            <div class="margin-pa" ></div>
+            <div class="margin-pa" ></div>
+            <div style="padding:3px">Trang</div>
+            <div class="pagination-input"><input class="text-center" type="text" name="name" value="1" /></div>
+            <div style="padding:3px" class="text-center">Trên 1</div>
+            <div class="margin-pa" ></div>
+            <div class="margin-pa""></div>
+            <div title="Tải lại" class="margin-pa" id="pagination5"></div>
+            <div class="pagination-select text-left margin-pa">
+                <span index-page="1">50</span> <img class="text-right" id="arrow-down-paginationn" src="/Content/nhthai/Img/arrow-down-line.png" />
+                <div style="display:none;" class="paginationn-toggle">
+                    <div value="15" class="pagination-value"><span>15</span></div>
+                    <div value="25" class="pagination-value"><span>25</span></div>
+                    <div value="50" class="pagination-value"><span>50</span></div>
+                    <div value="100" class="pagination-value"><span>100</span></div>
+                </div>
+            </div>
+        </div>
+
+        <div class="footer-nhacungcap1">
+            <div class="button-help" style="display:flex">
+
+            </div>
+            <div></div>
+            <div></div>
+            <div class="button-save text-center"><i style="margin: 0 5px 0 1px" class="fas fa-check fa-xs"></i>Đồng ý</div>
+            <div class="button-cancel text-center"><i class="fas fa-times fa-xs"></i>Hủy bỏ</div>
+        </div>
+
+    </div>
+    <!--HTML dialog nhacungcap-->
+    <div class="dialog-nhacungcap" style="display:none">
+        <div class="dialog-nhacungcap-header">
+            <div class="dialog-nhacungcap-choise1 b1" id="dialog-nhacungcap-choise1"></div>
+            <div style="margin-right: 10px;">Tổ chức</div>
+            <div class="dialog-nhacungcap-choise2 b2" id="dialog-nhacungcap-choise2"></div>
+            <div>Cá nhân</div>
+        </div>
+
+
+
+        <div class="dialog-nhacungcap-content" style="clear: both;">
+
+            <table id="dialog-nhacungcap-table1">
+                <tr>
+                    <th>
+                        <div>THÔNG TIN CƠ BẢN</div>
+                    </th>
+                </tr>
+                <tr>
+                    <td>Mã nhà cung cấp</td>
+                    <td>
+                        <div><input id="input-nhacungcap-focus" type="text"></div>
+                    </td>
+
+
+                    <td title="Tên nhà cung cấp">Tên nhà cung cấp</td>
+                    <td>
+                        <div><input type="text"></div>
+                    </td>
+
+                </tr>
+                <tr>
+                    <td>Địa chỉ</td>
+                    <td colspan="3">
+                        <div><input type="text"></div>
+                    </td>
+                </tr>
+                <tr>
+                    <td>Mã số thuế</td>
+                    <td>
+                        <div><input type="text"></div>
+                    </td>
+                    <td>Điện thoại</td>
+                    <td>
+                        <div><input type="text"></div>
+                    </td>
+
+                </tr>
+                <tr>
+                    <td>Nhóm nhà cung cấp</td>
+                    <td>
+                        <div style="display:flex">
+                            <input type="text" placeholder="Nhập để tìm kiếm">
+                            <div style="border:none"><i class="fas fa-chevron-down fa-xs"></i></div>
+                            <div id="open-group-nhacungcap1" class="dialog-content-icon-plus"><i class="fas fa-plus fa-xs"></i></div>
+                        </div>
+                    </td>
+                    <td>Số nợ tối đa</td>
+                    <td>
+                        <div><input type="text"></div>
+                    </td>
+
+                </tr>
+                <tr>
+                    <td>Hạn nợ (ngày)</td>
+                    <td>
+                        <div><input type="text"></div>
+                    </td>
+                    <td>Ngân hàng</td>
+                    <td>
+                        <div><input type="text"></div>
+                    </td>
+
+                </tr>
+                <tr>
+                    <td>Số tài khoản</td>
+                    <td>
+                        <div><input type="text"></div>
+                    </td>
+                    <td title="Chi nhánh ngân hàng">Chi nhánh NH</td>
+                    <td>
+                        <div><input type="text"></div>
+                    </td>
+
+                </tr>
+
+                <tr>
+                    <th>
+                        <div>THÔNG TIN NGƯỜI LIÊN HỆ</div>
+                    </th>
+                </tr>
+                <tr>
+                    <td>Họ tên</td>
+                    <td>
+                        <div><input type="text"></div>
+                    </td>
+                    <td>Email</td>
+                    <td>
+                        <div><input type="text"></div>
+                    </td>
+
+                </tr>
+                <tr>
+                    <td>Điện thoại</td>
+                    <td>
+                        <div><input type="text"></div>
+                    </td>
+                    <td>Chức danh</td>
+                    <td>
+                        <div><input type="text"></div>
+                    </td>
+
+                </tr>
+                <tr>
+                    <td>Địa chỉ</td>
+                    <td colspan="3">
+                        <div><input type="text"></div>
+                    </td>
+                </tr>
+            </table>
+
+            <table id="dialog-nhacungcap-table2">
+                <tr>
+                    <th>
+                        <div>THÔNG TIN CƠ BẢN</div>
+                    </th>
+                </tr>
+                <tr>
+                    <td title="Mã nhà cung cấp">Mã nhà cung cấp</td>
+                    <td>
+                        <div><input type="text"></div>
+                    </td>
+                    <td>Họ Tên</td>
+                    <td>
+                        <div><input type="text"></div>
+                    </td>
+
+                </tr>
+                <tr>
+                    <td>Địa chỉ</td>
+                    <td colspan="3">
+                        <div><input type="text"></div>
+                    </td>
+                </tr>
+                <tr>
+                    <td>Email</td>
+                    <td>
+                        <div><input type="text"></div>
+                    </td>
+                    <td>Điện thoại</td>
+                    <td>
+                        <div><input type="text"></div>
+                    </td>
+
+                </tr>
+                <tr>
+                    <td title="Số chứng minh nhân dân">Số CMND</td>
+                    <td>
+                        <div><input type="text"></div>
+                    </td>
+                    <td title="Ngày cấp chứng minh nhân dân">Ngày cấp CMND</td>
+                    <td>
+                        <div class="input-content-nvmuahang"><input class="datepicker" type="text" name="name" value="" /></div>
+                    </td>
+
+                </tr>
+                <tr>
+                    <td title="Nơi cấp chứng minh nhân dân">Nơi cấp CMND</td>
+                    <td>
+                        <div><input type="text"></div>
+                    </td>
+                    <td>Nhóm nhà cung cấp</td>
+                    <td>
+                        <div style="display:flex">
+                            <input tabindex="8" type="text" placeholder="Nhập để tìm kiếm">
+                            <div style="border:none"><i class="fas fa-chevron-down fa-xs"></i></div>
+                            <div id="open-group-nhacungcap2" class="dialog-content-icon-plus"><i class="fas fa-plus fa-xs"></i></div>
+                        </div>
+                    </td>
+
+                </tr>
+                <tr>
+                    <td>Số nợ tối đa</td>
+                    <td>
+                        <div><input type="text"></div>
+                    </td>
+                    <td>Hạn nợ (ngày)</td>
+                    <td>
+                        <div><input type="text"></div>
+                    </td>
+
+                </tr>
+                <tr>
+                    <td>Số tài khoản</td>
+                    <td>
+                        <div><input type="text"></div>
+                    </td>
+                    <td>Ngân hàng</td>
+                    <td>
+                        <div><input type="text"></div>
+                    </td>
+
+                </tr>
+                <tr>
+                    <td title="Chi nhánh ngân hàng">Chi nhánh NH</td>
+                    <td>
+                        <div><input type="text"></div>
+                    </td>
+
+
+                </tr>
+
+
+            </table>
+
+
+
+            <div class="footer-nhacungcap1">
+
+
+
+                <div class="button-help" style="display:flex">
+                    <div title="F1" class="icon-help"></div><span tabindex="18" style="float:right;font-size:13px;font-weight:bold;">
+                        Trợ
+                        giúp
+                    </span>
+                </div>
+                <div></div>
+                <div></div>
+                <div title="Ctrl + S" class="button-save text-center"><i class="fas fa-save fa-xs"></i>Lưu</div>
+                <div title="Ctrl + B" class="button-cancel text-center"><i class="fas fa-times fa-xs"></i>Hủy bỏ</div>
+            </div>
+        </div>
+    </div>
+    <!--HTML dialog nvmuahang-->
+    <div class="dialog-nvmuahang" style="display:none">
+        <div class="dialog-tabmenu-nvmuahang">
+            <div class="tabmenu-nvmuahang-header">
+                <div class="tabmenu-nvmuahang-header-element s1">Thông tin cơ bản</div>
+                <div field="2" class="tabmenu-nvmuahang-header-element tab-nvmuahang-hidden s2">Thông tin hồ sơ</div>
+                <div class="tabmenu-nvmuahang-header-element tab-nvmuahang-hidden s3">Thông tin liên hệ</div>
+                <div id="thoigiantruycap" class="tabmenu-nvmuahang-header-element tab-nvmuahang-hidden s4">
+                    Thời gian
+                    truy cập
+                </div>
+            </div>
+
+
+            <div class="dialog-content-nvmuahang">
+                <table class="table-nvmuahang table-nvmuahang1 active s1" width="100">
+                    <tr>
+                        <td>Mã nhân viên<span class="red">*</span></td>
+                        <td>
+                            <div class="input-content-nvmuahang">
+                                <input class="code" tabindex="1" required type="text">
+                                <img style="display:none" class="error" src="/Content/nhthai/Img/exclamation.png" />
+                            </div>
+                        </td>
+
+                        <td>Ảnh nhân viên</td>
+
+
+                        <td rowspan="2" style="position: relative;left: 60px;" class="text-left">
+                            <div class="img-product">
+                                <img src="/Content/nhthai/Img/Product.png" />
+                                <div><span class="dot">...</span></div>
+                            </div>
+                        </td>
+                    </tr>
+
+                    <tr>
+                        <td>Tên nhân viên<span class="red">*</span></td>
+                        <td>
+                            <div class="input-content-nvmuahang">
+                                <input tabindex="2" required type="text"> <img style="display:none"
+                                                                               class="error" src="/Content/nhthai/Img/exclamation.png" />
+                            </div>
+                        </td>
+
+                    </tr>
+
+                    <tr>
+                        <td>Vai trò</td>
+                        <td colspan="4">
+                            <div class="input-content-nvmuahang1 special">
+                                <input tabindex="3" required type="text">
+                                <img style="display:none" class="error" src="/Content/nhthai/Img/exclamation.png" />
+                            </div>
+                        </td>
+
+                    </tr>
+                    <tr>
+                        <td></td>
+                        <td colspan="2">
+                            <img class="allow" src="/Content/nhthai/Img/check.png" /><span>
+                                Cho
+                                phép làm việc với phần mềm
+                            </span>
+                        </td>
+                    </tr>
+
+                    <tr class="MK">
+                        <td>Mật khẩu<span class="red">*</span></td>
+                        <td>
+                            <div class="input-content-nvmuahang">
+                                <input tabindex="4" required type="text"> <img style="display:none"
+                                                                               class="error" src="/Content/nhthai/Img/exclamation.png" />
+                            </div>
+                        </td>
+                        <td data-toggle="tooltip" data-html="true" title="Xác nhân mật khẩu">Xác nhân MK<span class="red">*</span></td>
+                        <td>
+                            <div class="input-content-nvmuahang">
+                                <input tabindex="5" required type="text"> <img style="display:none"
+                                                                               class="error" src="/Content/nhthai/Img/exclamation.png" />
+                            </div>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td data-toggle="tooltip" data-html="true" title="Số chúng minh nhân dân">Số CMND</td>
+                        <td>
+                            <div class="input-content-nvmuahang"><input tabindex="6" type="text"></div>
+                        </td>
+                        <td>Ngày cấp</td>
+                        <td>
+                            <div class="input-content-nvmuahang"><input tabindex="7" type="text" class="datepicker"></div>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td data-toggle="tooltip" data-html="true" title="Nơi cấp chứng minh nhân dân">Nơi cấp CMND</td>
+                        <td>
+                            <div class="input-content-nvmuahang"><input tabindex="8" type="text"></div>
+                        </td>
+                        <td>Ngày sinh</td>
+                        <td>
+                            <div class="input-content-nvmuahang"><input tabindex="9" type="text" class="datepicker"></div>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>Trạng thái làm việc</td>
+                        <td>
+                            <div class="input-content-nvmuahang"><input tabindex="10" type="text"><i class="fas fa-chevron-down fa-xs"></i></div>
+                        </td>
+                        <td data-toggle="tooltip" data-html="true" title="Điện thoại di động">ĐT di động</td>
+                        <td>
+                            <div class="input-content-nvmuahang"><input tabindex="11" type="text"></div>
+                        </td>
+                    </tr>
+
+                    <tr>
+                        <td>Tình trạng hôn nhân</td>
+                        <td class="radio-check-nvmuahang1">
+                            <span>Độc thân</span><img class="img1" src="/Content/nhthai/Img/radio-check.png" /><span>
+                                Đã
+                                kết hôn
+                            </span><img class="img2" src="/Content/nhthai/Img/radio-uncheck.png" />
+                        </td>
+                        <td>Giới tính</td>
+                        <td class="radio-check-nvmuahang2">
+                            <span>Nam</span><img class="img1" src="/Content/nhthai/Img/radio-check.png" /><span>Nữ</span><img class="img2" src="/Content/nhthai/Img/radio-uncheck.png" />
+                        </td>
+
+
+                    </tr>
+
+
+
+
+                </table>
+
+
+                <table class="table-nvmuahang table-nvmuahang2 inactive s2">
+                    <tr>
+                        <td data-toggle="tooltip" data-html="true" title="Điện thoại nhà riêng">ĐT nhà riêng</td>
+                        <td>
+                            <div class="input-content-nvmuahang"><input class="code" type="text"></div>
+                        </td>
+                        <td>Email</td>
+                        <td>
+                            <div class="input-content-nvmuahang"><input type="text"></div>
+                        </td>
+                    </tr>
+
+                    <tr>
+                        <th>Hộ khẩu thường trú</th>
+                    </tr>
+
+                    <tr>
+                        <td>Địa chỉ</td>
+                        <td colspan="4">
+                            <div class="input-content-nvmuahang1"><input type="text"></div>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>Quốc gia</td>
+                        <td>
+                            <div class="input-content-nvmuahang"><input type="text"><i class="fas fa-chevron-down fa-xs"></i></div>
+                        </td>
+                        <td data-toggle="tooltip" data-html="true" title="Tỉnh thành phố">Tỉnh/TP</td>
+                        <td>
+                            <div class="input-content-nvmuahang">
+                                <input placeholder="Nhập để tìm kiếm" type="text"><i class="fas fa-chevron-down fa-xs"></i>
+                            </div>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>Quận/huyện</td>
+                        <td>
+                            <div class="input-content-nvmuahang">
+                                <input placeholder="Nhập để tìm kiếm" type="text"><i class="fas fa-chevron-down fa-xs"></i>
+                            </div>
+                        </td>
+                        <td data-toggle="tooltip" data-html="true" title="Xã phường">Xã/Phường</td>
+                        <td>
+                            <div class="input-content-nvmuahang">
+                                <input placeholder="Nhập để tìm kiếm" type="text"><i class="fas fa-chevron-down fa-xs"></i>
+                            </div>
+                        </td>
+                    </tr>
+                    <tr>
+                        <th>Chỗ ở hiện tại</th>
+                    </tr>
+                    <tr>
+                        <td>Địa chỉ</td>
+                        <td colspan="4">
+                            <div class="input-content-nvmuahang1"><input type="text"></div>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>Quốc gia</td>
+                        <td>
+                            <div class="input-content-nvmuahang"><input type="text"></div>
+                        </td>
+                        <td data-toggle="tooltip" data-html="true" title="Tỉnh thành phố">Tỉnh/TP</td>
+                        <td>
+                            <div class="input-content-nvmuahang"><input type="text"></div>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>Quận/huyện</td>
+                        <td>
+                            <div class="input-content-nvmuahang"><input type="text"></div>
+                        </td>
+                        <td data-toggle="tooltip" data-html="true" title="Xã phường">Xã/ Phường</td>
+                        <td>
+                            <div class="input-content-nvmuahang"><input type="text"></div>
+                        </td>
+                    </tr>
+                    <tr>
+                        <th>Liên hệ khẩn cấp</th>
+                    </tr>
+
+                    <tr>
+                        <td>Họ tên</td>
+                        <td>
+                            <div class="
+                            input-content-nvmuahang"><input type="text"></div>
+                        </td>
+                        <td data-toggle="tooltip" data-html="true" title="Điện thoại di động">ĐT di động/TP</td>
+                        <td>
+                            <div class="input-content-nvmuahang"><input type="text"></div>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>Quan hệ</td>
+                        <td>
+                            <div class="input-content-nvmuahang"><input type="text"></div>
+                        </td>
+                        <td data-toggle="tooltip" data-html="true" title="Điện thoại nhà riêng">ĐT nhà riêng</td>
+                        <td>
+                            <div class="input-content-nvmuahang"><input type="text"></div>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>Địa chỉ</td>
+                        <td colspan="
+                            4">
+                            <div class="input-content-nvmuahang1"><input type="text"></div>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>Email</td>
+                        <td colspan="4">
+                            <div class="input-content-nvmuahang1"><input type="text"></div>
+                            <input id="focus4" type="text" style="width:0;border:none;overflow:hidden" name="name"
+                                   value="" />
+
+                        </td>
+                    </tr>
+
+
+
+                </table>
+
+
+
+                <table class="table-nvmuahang table-nvmuahang2 inactive s3">
+                    <tr>
+                        <td>Ngày thử việc</td>
+                        <td>
+                            <div class="input-content-nvmuahang"><input type="text" placeholder="DD/MM/YYYY" class="datepicker code"></div>
+                        </td>
+                        <td>Ngày chính thức</td>
+                        <td>
+                            <div class="input-content-nvmuahang"><input type="text" placeholder="DD/MM/YYYY" class="datepicker"></div>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>Tiền lương</td>
+                        <td>
+                            <div class="input-content-nvmuahang"><input type="text"></div>
+                        </td>
+                        <td>Tiền cọc</td>
+                        <td>
+                            <div class="input-content-nvmuahang"><input type="text"></div>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>Danh sách hồ sơ gốc</td>
+                        <td colspan="4">
+                            <div class="input-content-nvmuahang1"><input type="text"></div>
+                            <input id="focus5" type="text" style="width:0;overflow:hidden;border:none" name="name"
+                                   value="" />
+                        </td>
+                    </tr>
+                </table>
+
+
+                <table class="table-nvmuahang table-nvmuahang2 inactive s4">
+                    <tr>
+                        <td width="30%">
+                            <div style="display:flex">
+                                <div class="icon-helpp"></div><span>Quyền truy cập</span>
+                            </div>
+                        </td>
+
+                        <td class="radio-check-nvmuahang3">
+                            <span>Truy cập tự do</span><img class="img1" src="/Content/nhthai/Img/radio-check.png" /><span>
+                                Truy
+                                cập tự do
+                            </span><img class="img2 i" src="/Content/nhthai/Img/radio-uncheck.png" />
+                        </td>
+                    </tr>
+                    <tr class="time-hidden time">
+                        <td>Thời gian truy cập</td>
+                    </tr>
+                    <tr class="time-hidden time">
+                        <td><img class="icon-check-time" src="/Content/nhthai/Img/check.png"><span>Thứ 2</span></td>
+                        <td>
+                            <div class="total-time-nv" style="display:flex">
+                                <div class="start-time-nv"><input type="text"></div><span> - </span>
+                                <div class="end-time-nv"><input type="text"></div>
+                            </div>
+                        </td>
+                    </tr>
+                    <tr class="time-hidden time">
+                        <td><img class="icon-check-time" src="/Content/nhthai/Img/check.png"><span>Thứ 3</span></td>
+                        <td>
+                            <div class="total-time-nv" style="display:flex">
+                                <div class="start-time-nv"><input type="text"></div><span>-</span>
+                                <div class="end-time-nv"><input type="text"></div>
+                            </div>
+                        </td>
+                    </tr>
+                    <tr class="time-hidden time">
+                        <td><img class="icon-check-time" src="/Content/nhthai/Img/check.png"><span>Thứ 4</span></td>
+                        <td>
+                            <div class="total-time-nv" style="display:flex">
+                                <div class="start-time-nv"><input type="text"></div><span>-</span>
+                                <div class="end-time-nv"><input type="text"></div>
+                            </div>
+                        </td>
+                    </tr>
+                    <tr class="time-hidden time">
+                        <td><img class="icon-check-time" src="/Content/nhthai/Img/check.png"><span>Thứ 5</span></td>
+                        <td>
+                            <div class="total-time-nv" style="display:flex">
+                                <div class="start-time-nv"><input type="text"></div><span>-</span>
+                                <div class="end-time-nv"><input type="text"></div>
+                            </div>
+                        </td>
+                    </tr>
+                    <tr class="time-hidden time">
+                        <td><img class="icon-check-time" src="/Content/nhthai/Img/check.png"><span>Thứ 6</span></td>
+                        <td>
+                            <div class="total-time-nv" style="display:flex">
+                                <div class="start-time-nv"><input type="text"></div><span>-</span>
+                                <div class="end-time-nv"><input type="text"></div>
+                            </div>
+                        </td>
+                    </tr>
+                    <tr class="time-hidden time">
+                        <td><img class="icon-check-time" src="/Content/nhthai/Img/check.png"><span>Thứ 7</span></td>
+                        <td>
+                            <div class="total-time-nv" style="display:flex">
+                                <div class="start-time-nv"><input type="text"></div><span>-</span>
+                                <div class="end-time-nv"><input type="text"></div>
+                            </div>
+                        </td>
+                    </tr>
+                    <tr class="time-hidden time">
+                        <td><img class="icon-check-time" src="/Content/nhthai/Img/check.png"><span>Chủ nhật</span></td>
+                        <td>
+                            <div class="total-time-nv" style="display:flex">
+                                <div class="start-time-nv"><input type="text"></div><span>-</span>
+                                <div class="end-time-nv"><input type="text"></div>
+                            </div>
+                        </td>
+                    </tr>
+                </table>
+
+
+            </div>
+            <div class="footer-nhacungcap1">
+                <div tabindex="16" class="button-help" style="display:flex">
+                    <div class="icon-help"></div><span style="float:right;font-size:13px;font-weight:bold;">
+                        Trợ
+                        giúp
+                    </span>
+                </div>
+                <div id="focus2" tabindex="17"></div>
+                <div></div>
+                <div tabindex="13" id="focus3" class="button-save text-center"><i class="fas fa-save fa-xs"></i>Lưu</div>
+                <div tabindex="14" class="button-cancel text-center"><i class="fas fa-times fa-xs"></i>Hủy bỏ</div>
+                <div id="focus1" tabindex="15"></div>
+            </div>
+        </div>
+    </div>
+
+
+    <!--HTML dialog watch-->
+    <div style="display:none" class="dialog-watch">
+        <div class="dialog-content-navbar">
+            <div id="dialog-content-navbar1" class="dialog-navbar">
+
+                <div class="disabledbutton"><i data-toggle="tooltip" data-html="true" title="ok" class="fas fa-arrow-left"></i><span>Trước</span></div>
+                <div class="disabledbutton"><i class="fas fa-caret-down fa-xs"></i></div>
+
+                <div class="disabledbutton"><span style="margin-right: 10px;">Sau</span><i class="fas fa-arrow-right"></i></div>
+
+                <div class="disabledbutton"><i class="fas fa-caret-down fa-xs"></i></div>
+            </div>
+
+            <div id="dialog-content-navbar2" class="dialog-navbar">
+                <div class="insert"><i class="fas fa-plus fa-xs"></i><span>Thêm mới</span></div>
+                <div class="fix"><i class="fas fa-pen fa-xs"></i><span>Sửa</span></div>
+                <div class="disabledbutton Savee" id="Save" title="Ctrl + S"><i class="fas fa-save fa-xs"></i><span>Lưu</span></div>
+                <div class="delete" title="Ctrl + K"><i class="fas fa-trash fa-xs"></i><span>Xóa</span></div>
+                <div class="disabledbutton"><i class="fas fa-undo fa-xs"></i><span>Hoãn</span></div>
+
+            </div>
+
+            <div id="dialog-content-navbar3" class="dialog-navbar">
+                <div class="printf"><i class="fas fa-print fa-xs"></i><span>in</span></div>
+                <div><i class="fas fa-caret-down fa-xs"></i></div>
+            </div>
+
+            <div id="dialog-content-navbar4" class="dialog-navbar">
+                <div class="disabledbutton"><i class="fas fa-cloud-download-alt fa-xs"></i><span>Xuất khẩu</span></div>
+                <div title="F1" id="help" class="help"><i class="fas fa-question-circle fa-xs"></i><span>Trợ giúp</span></div>
+                <div id="close-dialog-watch" title="Ctrl + Q"><i class="fas fa-times fa-xs"></i><span>Đóng</span></div>
+            </div>
+        </div>
+
+        <div class="dialog-content-details">
+
+            <div class="dialog-content-details-choise">
+                <div class="text-left">
+                    <div id="dialog-content-details-choise1" class="dialog-choise1 c1"></div>
+                    <div class="dialog-text"><span>Ghi nợ nhà cung cấp</span></div>
+                </div>
+
+                <div class="text-left">
+                    <div id="dialog-content-details-choise2" class="dialog-choise2 c2"></div>
+                    <div class="dialog-text"><span>Thanh toán ngay</span></div>
+                    <div id="dialog-content-tienmat"><span>Tiền mặt</span></div>
+                </div>
+
+                <div class="text-right">
+                    <div class="dialog-text"><span>Nhân kèm hóa đơn</span></div>
+                </div>
+
+            </div>
+            <div class="dialog-content-details-des">
+                <div>
+                    <div class="dialog-text"><span class="color-tab">Phiếu nhập</span></div>
+                </div>
+                <div style="display:none">
+                    <div class="dialog-text"><span class="color-tab">Phiếu chi</span></div>
+                </div>
+
+            </div>
+            <div class="dialog-content-details-info1">
+                <div id="dialog-content-details-info-col1">
+
+                    <div class="dialog-content-details-info-title"><span>Thông tin chung</span></div>
+
+
+                    <div class="dialog-content-details-info-input">
+                        <div class="dialog-text"><span>Nhà cung cấp</span></div>
+                        <div class="dialog-content-input disableinput">
+                            <input readonly data-1 class="disableinput" id="input1" type="text" name="name" value="" />
+                            <div style="display:none"><img src="/Content/nhthai/Img/arrow-down-line.png" /></div>
+                            <div style="display:none" id="icon-quicksearch1"> <img src="/Content/nhthai/Img/Quick-search.png" /></div>
+                            <div style="display:none" id="dialog-content-icon-plus1" class="dialog-content-icon-plus">
+                                <i class="fas fa-plus fa-xs"></i>
+                            </div>
+                        </div>
+                        <div class="dialog-content-input">
+                            <input readonly data-2 class="disableinput"
+                                   type="text" name="name" value="" />
+                        </div>
+                    </div>
+
+
+                    <div class="dialog-content-details-info-input1">
+                        <div class="dialog-text"><span>Người giao</span></div>
+                        <div class="dialog-content-input">
+                            <input data-3 readonly class="disableinput" type="text" name="name"
+                                   value="" />
+                        </div>
+                    </div>
+
+                    <div class="dialog-content-details-info-input1">
+                        <div class="dialog-text"><span>Diễn giải</span></div>
+                        <div class="dialog-content-input">
+                            <!--id="JournalMemo"-->
+                            <input data-4 readonly class="disableinput" type="text"
+                                   name="name" value="" />
+                        </div>
+                    </div>
+
+                    <div class="dialog-content-details-info-input">
+                        <div title="Nhân viên mua hàng" class="dialog-text"><span>NV mua hàng</span></div>
+                        <div class="dialog-content-input">
+                            <input data-5 readonly class="disableinput" id="EmployeeName" type="text" name="name" value="" />
+                            <div style="display:none"><img src="/Content/nhthai/Img/arrow-down-line.png" /></div>
+                            <div style="display:none" id="icon-quicksearch2"> <img src="/Content/nhthai/Img/Quick-search.png" /></div>
+                            <div style="display:none" class="dialog-content-icon-plus" id="dialog-content-icon-plus2">
+                                <i class="fas fa-plus fa-xs"></i>
+                            </div>
+                        </div>
+                        <div class="dialog-content-input disableinput">
+                            <input data-6 readonly class="disableinput" type="text"
+                                   name="name" value="" />
+                        </div>
+                    </div>
+                    <div class="dialog-text"><span>Tham chiếu</span></div>
+                </div>
+
+                <div id="dialog-content-details-info-col2">
+                    <div class="dialog-content-details-info-title"><span>Chứng từ</span></div>
+                    <div class="dialog-content-details-info-input2">
+                        <div class="dialog-text "><span>Số phiếu nhập</span></div>
+                        <div class="dialog-content-input">
+                            <input data-7 class="disableinput" readonly data2 id="RefNo" type="text"
+                                   name="name" />
+                        </div>
+                    </div>
+                    <div class="dialog-content-details-info-input2">
+                        <div class="dialog-text"><span>Ngày nhập</span></div>
+                        <div class="dialog-content-input disableinput">
+                            <input data-8 class="disableinput" style="width:85%;height:90%"
+                                   data1 readonly id="RefDate" type="text" name="name" value="" />
+                        </div>
+                    </div>
+                    <div class="dialog-content-details-info-input2">
+                        <div class="dialog-text"><span>Giờ nhập</span></div>
+                        <div class="dialog-content-input disableinput">
+                            <input data-9 class="disableinput" style="width:86%"
+                                   readonly type="text" name="name" value="8:22" id="timepicker" />
+                            <div style="display:none" class="sprite"></div>
+                        </div>
+                    </div>
+
+                </div>
+
+            </div>
+
+            <div class="text-center thugon">
+                Thu gọn <div class="icon-collapse"></div>
+            </div>
+        </div>
+
+
+
+
+
+
+        <div class="dialog-footer">
+
+            <div class="dialog-footer-title">
+                <div class="dialog-content-details-info-title"><span>CHI TIẾT</span></div>
+                <div></div>
+                <div class="dialog-footer-flex-right">
+                    <img class="check-img" src="/Content/nhthai/Img/uncheck.png" style="position:relative; bottom: 0px; width:20px;height:20px">
+                    <div class="a"><span>Quét mã vạch</span></div>
+                    <div id="img-footer-dialog"></div>
+                    <div class="a"><span>Nhập khẩu</span></div>
+                </div>
+            </div>
+            <div class="dialog-footer-content">
+                <div class="dialog-footer-th">
+                    <div WatchData="SKUCode"><span>Mã SKU</span></div>
+                    <div WatchData="InventoryItemName"><span>Tên hàng hóa</span></div>
+                    <div WatchData="StockName"><span>Kho</span></div>
+                    <div WatchData="UnitName"><span>Đơn vị tính</span></div>
+                    <div WatchData="Quantity"><span>Số lượng</span></div>
+                    <div WatchData="CostPrice"><span>Đơn giá</span></div>
+                    <div WatchData="Amount"><span>Thành tiền</span></div>
+                    <div WatchData="DiscountRate"><span>% CK</span></div>
+                    <div WatchData="DiscountAmount"><span>Tiền CK</span></div>
+                    <div WatchData="VATRate"><span>Thuế suất</span></div>
+                    <div WatchData="VATAmount"><span>Tiền thuế</span></div>
+                    <div WatchData="PayAmount"><span>Tiền thanh toán</span></div>
+                    <div WatchData><span></span></div>
+                </div>
+                <div class="appendShow">
+                    <!--<div class="dialog-footer-td not appendShow">
+                        <div></div>
+                        <div></div>
+                        <div></div>
+                        <div></div>
+                        <div></div>
+                        <div></div>
+                        <div></div>
+                        <div></div>
+                        <div></div>
+                        <div></div>
+                        <div></div>
+                        <div></div>
+
+                        <div class="icon-tabmenu">
+                            <div class="text-center icon-tabmenu-element"><img src="/Content/nhthai/Img/copy-down.png" /></div>
+                            <div class="text-center icon-tabmenu-element"><i class="fas fa-trash" style="color:red"></i></div>
+                        </div>
+
+                    </div>-->
+                </div>
+
+
+            </div>
+            <div class="dialog-insert-footer-revenul">
+                <div class="dialog-insert-footer-revenul-element">Tổng số lượng: <span>0</span></div>
+                <div class="dialog-insert-footer-revenul-element">Tổng thành tiền: <span>0</span></div>
+                <div class="dialog-insert-footer-revenul-element">Tổng tiền CK: <span>0</span></div>
+                <div class="dialog-insert-footer-revenul-element">Tiền thuế: <span>0</span></div>
+                <div class="dialog-insert-footer-revenul-element">Tổng tiền thanh toán: <span>0</span></div>
+            </div>
+        </div>
+
+
+    </div>
+
+
+
+    <!--HTML dialogDelete-->
+    <div class="dialog-delete" style="display:none">
+        <div class="dialog-delete-content">
+            <div class="img-note"></div>
+            <p id="text-alert">Bạn có chắc muốn xóa phiếu nhập hàng <span RefIDCode="RefNo" id="id-Code"></span> không? </p>
+        </div>
+        <div class="dialog-delete-footer">
+            <button id="delete-dialog" class="button-delete"><i class="fas fa-trash-alt fs-xs"></i>Xóa</button>
+            <button id="close-dialog-delete" class="button-dialog-cancel"><i class="fas fa-times fs-xs"></i>Thoát</button>
+        </div>
+    </div>
+
+    <!--HTML dialogWarning-->
+    <div class="dialog-warning" style="display:none">
+        <div class="dialog-delete-content">
+            <div class="img-warning"></div>
+            <p>
+                Phiếu nhập hàng ghi nợ không được bỏ trống nhà cung cấp.
+                <br /> Vui lòng kiểm tra lại
+            </p>
+        </div>
+        <div class="dialog-delete-footer">
+
+            <button class="button-dialog-save Save">Đồng ý</button>
+        </div>
+    </div>
+    <!--HTML dialogWarning-->
+    <div class="dialog-warning2" style="display:none">
+        <div class="dialog-delete-content">
+            <div class="img-warning"></div>
+            <p>
+                Phải nhập ít nhất 1 hàng hóa. Vui lòng kiểm tra lại
+            </p>
+        </div>
+        <div class="dialog-delete-footer">
+
+            <button class="button-dialog-save Save">Đồng ý</button>
+        </div>
+    </div>
+
+
+    <!--HTML dialog close-->
+    <div class="dialog-close" style="display:none">
+
+        <div class="dialog-delete-content">
+            <div class="img-note"></div>
+            <p>Dữ liệu đã thay đổi, bạn có muốn lưu không ? </p>
+        </div>
+        <div class="dialog-delete-footer">
+            <button class="button-dialog-save Save"><i class="fas fa-save fa-sm"></i>Lưu</button>
+            <button class="button-dialog-not-save">
+                <img src="/Content/nhthai/Img/not-save.png" />Không lưu
+            </button>
+            <button id="close-dialog-delete1" class="button-dialog-cancel"><i class="fas fa-times fs-xs"></i>Hủy bỏ</button>
+
+        </div>
+    </div>
+
+    <!--HTML dialog close1-->
+    <div class="dialog-close1" style="display:none">
+        <div class="dialog-delete-content">
+            <div class="img-note"></div>
+            <p>Số phiếu nhập đã tồn tại, hãy lưu với số phiếu nhập khác</p>
+        </div>
+        <div class="dialog-delete-footer">
+            <!--<button class="yesno yes"><span>Có</span></button>-->
+            <button class="yesno no"><span>Thoát</span></button>
+
+        </div>
+    </div>
+
+    <!--HTML dialog group nhacungcap-->
+    <div class="dialog-group" style="display:none">
+        <div class="dialog-group-content">
+            <div class="dialog-group-content-element">
+                <span class="text-left">Mã nhóm NCC <span class="red">*</span></span>
+                <div class="dialog-input-group"><input type="text" name="name" value="" /></div>
+            </div>
+            <div class="dialog-group-content-element">
+                <span class="text-left">Tên nhóm NCC <span class="red">*</span></span>
+                <div class="dialog-input-group"><input type="text" name="name" value="" /></div>
+            </div>
+            <div class="dialog-group-content-element">
+                <span class="text-left">Thuộc nhóm NCC</span>
+                <div class="dialog-input-group">
+                    <input type="text" name="name" value="" />
+
+                </div>
+                <img style="position: absolute; right: 38px;bottom: 129px;" src="/Content/nhthai/Img/arrow-down-line.png" />
+            </div>
+            <div class="dialog-group-content-element">
+                <span class="text-left">Mô tả</span>
+                <div class="dialog-input-group"><input type="text" name="name" value="" /></div>
+            </div>
+
+
+        </div>
+        <hr />
+        <div class="footer-nhacungcap1">
+            <div tabindex="16" class="button-help" style="display:flex">
+                <div class="icon-help"></div><span style="float:right;font-size:13px;font-weight:bold;">
+                    Trợ
+                    giúp
+                </span>
+            </div>
+            <div id="focus2" tabindex="17"></div>
+            <div></div>
+            <div tabindex="13" id="focus3" class="button-save text-center"><i class="fas fa-save fa-xs"></i>Lưu</div>
+            <div tabindex="14" class="button-cancel text-center"><i class="fas fa-times fa-xs"></i>Hủy bỏ</div>
+            <div id="focus1" tabindex="15"></div>
+        </div>
+    </div>
+
+
+
+    <div class="total">
+
+
+        <!--Thanh menu dọc-->
+        <div class="flex-menu">
+            <div class="menu">
+                <div id="menu-icon" class="text-center"><img src="/Content/nhthai/Img/logo-mshopkeeper.png" alt="Alternate Text" /></div>
+                <div class="text-left list">
+                    <div class="iconcls-home icon"></div><span>Tổng quan</span>
+                </div>
+                <div class="text-left list">
+                    <div class="iconcls-report icon"></div><span>Báo cáo</span>
+                </div>
+                <div class="text-left list">
+                    <img class="icon" src="/Content/nhthai/Img/ic_sogiaohang.png " /><span>
+                        Sổ
+                        giao hàng
+                    </span>
+                </div>
+                <div class="text-left list">
+                    <div class="iconcls-purchares icon"></div><span>Mua hàng</span>
+                </div>
+                <div class="text-left list">
+                    <div class="iconcls-stock icon"></div><span>Kho</span>
+                </div>
+                <div class="text-left list">
+                    <div class="iconcls-cash icon"></div><span>Quỹ tiền</span>
+                </div>
+                <div class="text-left list">
+                    <div class="iconcls-payment-receipt icon"></div><span>Chi phí</span>
+                </div>
+                <div class="text-left list">
+                    <div class="iconcls-promotion-group icon"></div><span>Khuyến mại</span>
+                </div>
+                <div class="text-left list">
+                    <div class="iconcls-home icon"></div><span>SMS Marketing</span>
+                </div>
+                <div class="text-left list">
+                    <div class="iconcls-dictionary icon"></div><span>Danh mục</span>
+                </div>
+                <div class="text-left list">
+                    <div class="iconcls-home icon"></div><span>Hóa đơn điện tử</span>
+                </div>
+                <div class="text-left list">
+                    <div class="iconcls-settings icon"></div><span>Thiết lập</span>
+                </div>
+                <div class="text-left list">
+                    <div class="icon-menuhelp icon"></div><span>Trợ giúp</span>
+                </div>
+                <div class="text-left list">
+                    <div class="icon-menusubcribe icon"></div><span>Thuê bao</span>
+                </div>
+                <div class="text-left list"><img class="icon" src="/Content/nhthai/Img/ic_ocm_logo.png" /><span>OCM</span></div>
+                <div class="text-left list"><img class="icon" src="/Content/nhthai/Img/icon_5shop_white_24_1.png" /><span>5Shop</span></div>
+                <div class="text-left list"></div>
+
+                <div class="text-left list" style="border-top:1px solid #00577b">
+                    <div class="iconcls-inventoryitem icon"></div><span>Hàng hóa</span>
+                </div>
+            </div>
+        </div>
+        <!--Thanh menu dọc-->
+        <!--Cột nội dung-->
+        <div class="content">
+
+
+            <!--Thanh thông tin(người dùng, thông báo tiêu đề trang)-->
+            <div class="navbar">
+                <div><span id="navbar-title">Bán Hàng</span></div>
+                <div class="text-right"><span id="navbar-name-shop">Shop Mai Dung <img id="arrow-downn" src="/Content/nhthai/Img/arrow-down-line.png" /></span></div>
+                <div class="text-center">
+                    <img width="28" height="28" src="/Content/nhthai/Img/user.jpg" alt="Alternate Text" /><span id="navbar-name-user">Lâm Thế Anh</span><img id="navbar-arrow" src="/Content/nhthai/Img/arrow-down-line.png"
+                                                                                                                                                             alt="Alternate Text" />
+                </div>
+                <div class="navbar-icon text-center">
+                    <img title="Thông báo" id="notification" src="/Content/nhthai/Img/notify-18.png"
+                         alt="Alternate Text" />
+                </div>
+                <div class="navbar-icon text-center">
+                    <img title="Trợ giúp" src="/Content/nhthai/Img/icon-help-18-hover.png"
+                         alt="Alternate Text" />
+                </div>
+            </div>
+            <!--Thanh thông tin(người dùng, thông báo tiêu đề trang)-->
+            <!--Chứa chức năng và table-->
+            <div class="jumbotro">
+                <div class="table-all">
+
+                    <!--Chức năng-->
+                    <div class="table-menu">
+                        <div title="Ctrl + 1" id="dialog-insert" class="text-center">
+                            <a href="#">
+                                <i class="fas fa-plus fa-xs"></i><span>
+                                    Thêm
+                                    mới
+                                </span>
+                            </a>
+                        </div>
+                        <div class="text-center" id="dialog-duplicate"><a href="#"><i class="far fa-clone fa-xs"></i><span>Nhân bản</span></a></div>
+                        <div class="text-center" id="dialog-watch"><a href="#"><i class="fas fa-eye fa-xs"></i><span>Xem</span></a></div>
+                        <div data-toggle="tooltip" data-html="true" title="Ctrl + D" id="dialog-edit" class="text-center">
+                            <a href="#"><i class="fas fa-pen fa-xs"></i><span>Sửa</span></a>
+                        </div>
+                        <div title="Ctrl + D" id="dialog-delete" class="text-center"><a href="#"><i class="fas fa-trash fa-xs"></i><span>Xóa</span></a></div>
+                        <div class="text-center" id="load"><a href="#"><i class="fas fa-sync-alt fa-xs"></i><span>Nạp</span></a></div>
+                        <div class="text-center"><a href="#"><i class="fas fa-barcode"></i><span>In tem mã</span></a></div>
+                    </div>
+                    <!--Chức năng-->
+                    <!--Fillter1-->
+                    <div class="table-content">
+                        <div class="table-content-filter">
+                            <div id="fillter-getdate" class="text-center table-content-filter-list">
+                                <input id="c" type="text" name="name" value="Tháng này" />
+                                <img id="arrow-down" src="/Content/nhthai/Img/arrow-down-line.png" />
+                                <div class="toggle-date">
+                                    <div class="toggle-date-details" numberfill="1" id="a" value="value">Hôm nay</div>
+                                    <div class="toggle-date-details" numberfill="2" value="Hôm qua">Hôm qua</div>
+                                    <div class="toggle-date-details" numberfill="3" value="Tuần này">Tuần này</div>
+                                    <div class="toggle-date-details" numberfill="4" value="Tuần trước">Tuần trước</div>
+                                    <div class="toggle-date-details" numberfill="5" value="Tháng này">Tháng này</div>
+                                    <div class="toggle-date-details" numberfill="6" valuse="Tháng trước">Tháng trước</div>
+                                    <div class="toggle-date-details" numberfill="7" value="Quý này">Quý này</div>
+                                    <div class="toggle-date-details" numberfill="8" value="Quý trước">Quý trước</div>
+                                    <div class="toggle-date-details" numberfill="9" value="6 tháng trước">6 tháng trước</div>
+                                    <div class="toggle-date-details" numberfill="10" value="Năm nay">Năm nay</div>
+                                    <div class="toggle-date-details" numberfill="11" value="Năm trước">Năm trước</div>
+                                </div>
+                            </div>
+                            <div class="text-center table-content-filter-list aa"><span>Từ ngày</span></div>
+                            <div class="text-center table-content-filter-list">
+                                <div class="table-content-filter-list-date" id="start-date-border">
+                                    <input id="start-date"
+                                           value="01/06/2019" type="text" class="datepickerr">
+                                    <!--<div class="icon-date"></div>-->
+                                </div>
+                            </div>
+                            <div class="text-center table-content-filter-list aa"><span>Đến ngày</span></div>
+                            <div class="text-center table-content-filter-list ">
+                                <div class="table-content-filter-list-date" id="end-date-border">
+                                    <input id="end-date"
+                                           value="31/06/2019" type="text" class="datepickerr">
+                                    <!--<div class="icon-date"></div>-->
+                                </div>
+                            </div>
+                            <div id="get-data" class="text-center table-content-filter-list">
+                                <a href="#">
+                                    <i style="margin:0 10px 0 0"
+                                       class="fas fa-filter fa-xs"></i><span>Lấy dữ liệu</span>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+
+
+                    <!--Fillter1-->
+                    <!--Dialog-->
+                    <!--<div id="dialog" class="ui-widget-content">-->
+                    <!--<div class="dialog-header ">
+                        <div class="dialog-header-title"><span>Thêm mới Phiếu nhập hàng</span></div>
+                        <div class="dialog-header-icon"><div id="max"></div><div id="close"></div></div>
+                    </div>-->
+                    <!--</div>-->
+                    <!--Dialog-->
+
+
+
+
+
+                    <div class="tablee">
+
+
+                        <!--Fillter2-->
+                        <div class="table-description">
+                            <div id="uncheck" fieldName="" class="text-center check">
+                                <img class="check-img" id="check-total"
+                                     src="/Content/nhthai/Img/uncheck.png" />
+                            </div>
+
+
+                            <div fieldName="RefDate" id="resize1" class="table-element-description text-center">
+                                <span>Ngày nhập</span>
+                                <div class="table-description-choise">
+                                    <span id="calculation1"><span style="top:3px" id="i1">=</span></span>
+                                    <div></div>
+                                    <div class="" id="fill-date-border">
+                                        <!--<i class="fas fa-search fa-xs"></i>-->
+                                        <input filter="RefDate" id="fill-date" type="text" name="name"
+                                               style="height:30px" value="" class="datepickerr" />
+                                        <!--<div class="icon-date"></div>-->
+                                    </div>
+                                </div>
+                                <div class="toggle-calculation" id="toggle-calculation1">
+                                    <div class="toggle-calculation-layout">
+                                        <div class="toggle-calculation-layout-child child1" name="=">= Bằng</div>
+                                        <div class="toggle-calculation-layout-child child1" name="<">
+                                            <: Nhỏ hơn
+                                        </div> <div class="toggle-calculation-layout-child child1" name="≤">
+                                            ≤:
+                                            Nhỏ hơn hoặc bằng
+                                        </div>
+                                        <div class="toggle-calculation-layout-child child1" name=">">>: Lớn hơn</div>
+                                        <div class="toggle-calculation-layout-child child1" name="≥">
+                                            ≥: Lớn hơn hoặc
+                                            bằng
+                                        </div>
+                                    </div>
+
+                                </div>
+                            </div>
+                            <div FilterType1="0" fieldName="RefNo" id="resize2" class="table-element-description text-center">
+                                <span>Số phiếu nhập</span>
+                                <div class="table-description-choise">
+                                    <span><span style="top:3px" id="i2"><i style="margin: 0 5px 0 0;position: relative;bottom: 1px;" class="fas fa-search fa-xs"></i></span></span><input value ="" filter="RefNo" style="height:30px" type="text" name="name" value="" />
+                                </div>
+                                <div class="toggle-calculation" id="toggle-calculation2">
+                                    <div class="toggle-calculation-layout">
+                                        <div class="toggle-calculation-layout-child child2" name="*">*: Bằng</div>
+                                        <div class="toggle-calculation-layout-child child2" name="=">=: Nhỏ hơn</div>
+                                        <div class="toggle-calculation-layout-child child2" name="+">
+                                            +: Nhỏ hơn hoặc
+                                            bằng
+                                        </div>
+                                        <div class="toggle-calculation-layout-child child2" name="-">-: Lớn hơn</div>
+                                        <div class="toggle-calculation-layout-child child2" name="!">
+                                            !: Lớn hơn hoặc
+                                            bằng
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div   FilterType1="0"  fieldName="VendorName" id="resize3" class="table-element-description text-center">
+                                <span>Nhà cung cấp</span>
+                                <div class="table-description-choise">
+                                    <span><span style="top:3px" id="i2"><i style="margin: 0 5px 0 0;position: relative;bottom: 1px;" class="fas fa-search fa-xs"></i></span></span><input value="" filter="VendorName" style="height:30px" type="text" name="name" value="" />
+                                </div>
+                                <div class="toggle-calculation" id="toggle-calculation3">
+                                    <div class="toggle-calculation-layout">
+                                        <div class="toggle-calculation-layout-child child3" name="*">*: Bằng</div>
+                                        <div class="toggle-calculation-layout-child child3" name="=">=: Nhỏ hơn</div>
+                                        <div class="toggle-calculation-layout-child child3" name="+">
+                                            +: Nhỏ hơn hoặc
+                                            bằng
+                                        </div>
+                                        <div class="toggle-calculation-layout-child child3" name="-">-: Lớn hơn</div>
+                                        <div class="toggle-calculation-layout-child child3" name="!">
+                                            !: Lớn hơn hoặc
+                                            bằng
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div fieldName="TotalAmount" id="resize4" class="table-element-description text-center">
+                                <span>Thành tiền</span>
+                                <div class="table-description-choise">
+                                    <span id="calculation4"><span FilterType1="0" class="te"style="top:3px" id="i4">*</span></span> <input class="current-money" value ="" filter="TotalAmount" style="height:30px" type="text" name="name"/>
+                                </div>
+                                <div class="toggle-calculation" id="toggle-calculation4">
+                                    <div class="toggle-calculation-layout">
+                                        <div class="toggle-calculation-layout-child child4" FilterType="0" name="*">* Chứa</div>
+                                       
+                                        <div class="toggle-calculation-layout-child child4" FilterType="6" name="<">
+                                            <: Nhỏ hơn
+                                        </div> <div class="toggle-calculation-layout-child child4" FilterType="7" name="≤">
+                                            ≤:
+                                            Nhỏ hơn hoặc bằng
+                                        </div>
+                                        <div class="toggle-calculation-layout-child child4" FilterType="4" name=">">>: Lớn hơn</div>
+                                        <div class="toggle-calculation-layout-child child4" FilterType="5" name="≥">
+                                            ≥: Lớn hơn hoặc
+                                            bằng
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div fieldName="EmployeeName" id="resize5" class="table-element-description text-center">
+                                <span>Nhân viên mua hàng</span>
+                                <div class="table-description-choise">
+                                    <div class="toggle-emoloyee" >
+                                        <div filter="Gender" val1="" class="add-gender">Tất cả</div>
+                                        <img class="text-right" id="arrow-employee" src="/Content/nhthai/Img/arrow-down-line.png" />
+                                        <div class="toggle-emoloyee-gender">
+                                            <div class="text-left g" value-gender="">Tất cả</div>
+                                            <div class="text-left g" value-gender="0">Nam</div>
+                                            <div class="text-left g" value-gender="1">Nữ</div>
+
+                                        </div>
+                                    </div>
+                                    <!--<span id="calculation5"><span style="top:3px" id="i5">*</span></span>--> <!--<input filter="EmployeeName" style="height:30px" type="text" name="name" value="" />-->
+                                </div>
+                                <div class="toggle-calculation" id="toggle-calculation5">
+                                    <div class="toggle-calculation-layout">
+                                        <div class="toggle-calculation-layout-child child5" name="=">= Bằng</div>
+                                        <div class="toggle-calculation-layout-child child5" name="<">
+                                            <: Nhỏ hơn
+                                        </div> <div class="toggle-calculation-layout-child child5" name="≤">
+                                            ≤:
+                                            Nhỏ hơn hoặc bằng
+                                        </div>
+                                        <div class="toggle-calculation-layout-child child5" name=">">>: Lớn hơn</div>
+                                        <div class="toggle-calculation-layout-child child5" name="≥">
+                                            ≥: Lớn hơn hoặc
+                                            bằng
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div   FilterType1="0" fieldName="JournalMemo" id="resize5" class="table-element-description text-center">
+                                <span>Diễn giải</span>
+                                <div class="table-description-choise">
+                                    <span><span style="top:3px" id="i2"><i style="margin: 0 5px 0 0;position: relative;bottom: 1px;" class="fas fa-search fa-xs"></i></span></span><input value ="" filter="JournalMemo" style="height:30px" type="text" name="name" value="" />
+                                </div>
+                                <div class="toggle-calculation" id="toggle-calculation6">
+                                    <div class="toggle-calculation-layout">
+                                        <div class="toggle-calculation-layout-child child6" name="*">*: Bằng</div>
+                                        <div class="toggle-calculation-layout-child child6" name="=">=: Nhỏ hơn</div>
+                                        <div class="toggle-calculation-layout-child child6" name="+">
+                                            +: Nhỏ hơn hoặc
+                                            bằng
+                                        </div>
+                                        <div class="toggle-calculation-layout-child child6" name="-">-: Lớn hơn</div>
+                                        <div class="toggle-calculation-layout-child child6" name="!">
+                                            !: Lớn hơn hoặc
+                                            bằng
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                        </div>
+                        <!--Fillter2-->
+
+
+
+
+                        <div>
+                            <div class="table-details-height">
+                                <div class="load"><img src="/Content/nhthai/Img/loading.gif" /></div>
+
+                            </div>
+
+                        </div>
+
+                    </div>
+                    <div class="sticky" style="background: #e9e9e9">
+                        <div></div>
+                        <div class="a"></div>
+                        <div class="a"></div>
+                        <div class="a"></div>
+                        <div class="text-left a"><strong>0</strong></div>
+                        <div class="a"></div>
+                        <div class="a"></div>
+                        <div></div>
+
+
+                    </div>
+
+                    <div class="paginationn">
+
+                        <div class="margin-pa  pagination1" id="pagination1"></div>
+                        <div class="margin-pa pagination2" id="pagination2"></div>
+                        <div class="" style="padding:3px">Trang</div>
+                        <div class="pagination-input "><input onkeyup="if (/\D/g.test(this.value)) this.value = this.value.replace(/\D/g,'')" class="text-center" type="text" name="name" value="1" /></div>
+                        <div class="text-center TotalPage" style="padding:3px">Trên 1</div>
+                        <div class="margin-pa pagination3" id="pagination3"></div>
+                        <div class="margin-pa pagination4" id="pagination4"></div>
+                        <div title="Tải lại" class="margin-pa" id="pagination5"></div>
+                        <div class="pagination-select text-left margin-pa">
+                            <span index-page="1" id="pagination-value-choise">50</span> <img class="text-right arrow-down-paginationn" id="arrow-down-paginationn"
+                                                                              src="/Content/nhthai/Img/arrow-down-line.png" />
+                            <div style="display:none;" class="paginationn-toggle">
+                                <div value="15" class="pagination-value"><span>15</span></div>
+                                <div value="25" class="pagination-value"><span>25</span></div>
+                                <div value="50" class="pagination-value"><span>50</span></div>
+                                <div value="100" class="pagination-value"><span>100</span></div>
+                            </div>
+                        </div>
+                        <div style="float:right;" class="TotalRecord">Hiển thị 1-15 trên 15 kết quả</div>
+                    </div>
+
+                    <div class="table-footer">
+                        <div class="table-footer-title">
+                            <div class="table-footer-title-detail">
+                                <div id="details">Chi tiết</div>
+                            </div>
+                        </div>
+                        <div class="table-footer-content">
+                            <div class="table-footer-th">
+                                <table class="table-table">
+                                    <thead class="thead-theadd">
+                                        <tr class="table-footer-tr">
+                                            <th fieldItemName="SKUCode">Mã SKU</th>
+                                            <th fieldItemName="InventoryItemName">Tên hàng hóa</th>
+                                            <th fieldItemName="StockName">Kho</th>
+                                            <th fieldItemName="UnitName">Đơn vị tính</th>
+                                            <th fieldItemName="Quantity">Số lượng</th>
+                                            <th fieldItemName="CostPrice">Đơn giá</th>
+                                            <th fieldItemName="Amount">Thành tiền</th>
+                                            <th fieldItemName="DiscountRate">% CK</th>
+                                            <th fieldItemName="DiscountAmount">Tiền CK</th>
+                                            <th fieldItemName="VATRate">Thuế suất</th>
+                                            <th fieldItemName="VATAmount">Tiền thuế</th>
+                                            <th fieldItemName="PayAmount">Thanh toán</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody class="tbody-tbody">
+                                          <!--<td class="load1"><img src="/Content/nhthai/Img/loading.gif" /></td>-->
+
+                                    </tbody>
+
+                                  
+                                </table>
+
+                            </div>
+
+
+
+
+                        </div>
+
+
+
+                    </div>
+                    <div class="total-footer">
+                        <div total-footer="Quantity">Tổng số lượng: <span>0</span></div>
+                        <div total-footer="Amount">Tổng thành tiền: <span>0</span></div>
+                        <div total-footer="DiscountRate">Tiền CK: <span>0</span></div>
+                        <div total-footer="VATAmount">Tiền thuế: <span>0</span></div>
+                        <div total-footer="PayAmount">Tổng tiền thanh toán: <span>0</span></div>
+
+                    </div>
+                </div>
+                <!--Chứa chức năng và table-->
+
+            </div>
+        </div>
+        <!--Cột nội dung-->
+
+    </div>
+
+    <!--<div class="d-none footer-td">
+        <div class="dialog-footer-td">
+
+            <div class="dialog-footer-td-element dialog-footer-td-element-special ">
+
+                <input fielditemname1="SKUCode" class="hidden ip-first item0" type="text" name="tabmenuinput" id="focus-tabindex1" value=""
+                       placeholder="Tìm mã hoặc tên" />
+                <img class="hidden cursor-menu arrow-toggle-nhacungcap-content2" contentEditable src="/Content/nhthai/Img/arrow-down-line.png" />
+
+                <img class="hidden cursor-menu " src="/Content/nhthai/Img/Quick-search.png" contentEditable />
+                <div class="dialog-content-icon-plus hidden cursor-menu" style="float:right"><i class="fas fa-plus fa-xs" contentEditable></i></div>
+            </div>
+
+            <div class="dialog-footer-td-element noclick"><span style="font-weight:200;padding-left:10px;" fielditemname1="InventoryItemName"></span></div>
+            <div class="dialog-footer-td-element dialog-footer-td-element-special ">
+                <input fielditemname1="StockName" class="addrow1 revalue" type="text"
+                       value="" name="tabmenuinput1" /> <img class="hidden cursor-menu" id="arrow-down-paginationn" src="/Content/nhthai/Img/arrow-down-line.png" contentEditable />
+            </div>
+            <div class="dialog-footer-td-element dialog-footer-td-element-special ">
+                <input fielditemname1="UnitName" class="addrow1 text-right revalue" type="text"
+                       value="" name="tabmenuinput1" /> <img class="hidden cursor-menu" id="arrow-down-paginationn" src="/Content/nhthai/Img/arrow-down-line.png" contentEditable />
+            </div>
+
+            <div class="dialog-footer-td-element dialog-footer-td-element-special">
+                <input fielditemname2="Quantity" class=" text-right addrow number coculator" value="0" type="number" name="name" min="0" onkeypress='validate(event)' />
+            </div>
+            <div class="dialog-footer-td-element dialog-footer-td-element-special">
+                <input fielditemname1="CostPrice" class="text-right addrow number current-money coculator" value="0" type="text" onkeypress='validate(event)'
+                       name="name" />
+            </div>
+            <div class="dialog-footer-td-element dialog-footer-td-element-special">
+                <input fielditemname2="Amount" class=" text-right addrow number current-money coculator" value="0" type="text"
+                       name="name" />
+            </div>
+            <div class="dialog-footer-td-element dialog-footer-td-element-special">
+                <input fielditemname2="DiscountRate" class=" text-right addrow coculator" onkeypress='return event.charCode >= 48 && event.charCode <= 57' oninput="changeHandler(this)" value="0" type="number"
+                       name="name" min="0" />
+            </div>
+            <div class="dialog-footer-td-element text-right " style="padding:0 4px 0 5px"><div fielditemname2="DiscountAmount" style="border:none" data-type="number">0</div></div>
+            <div class="dialog-footer-td-element dialog-footer-td-element-special">
+                <input fielditemname2="VATRate" class=" text-right addrow ip-last coculator" min="0" max="100" onkeypress='return event.charCode >= 48 && event.charCode <= 57' oninput="changeHandler(this)" value="0" type="number"
+                       name="name" />
+            </div>
+            <div class="dialog-footer-td-element text-right number" style="padding:0 4px 0 5px">
+                <div fielditemname2="VATAmount" style="border:none" data-type="number">0</div>
+            </div>
+            <div class="dialog-footer-td-element text-right number" style="padding:0 4px 0 5px"><div fielditemname2="PayAmount" style="border:none" data-type="number">0</div></div>
+            <div class="icon-tabmenu">
+                <div class="text-center icon-tabmenu-element"><img src="/Content/nhthai/Img/copy-down.png" /></div>
+                <div class="text-center icon-tabmenu-element remove-row"><i class="fas fa-trash" style="color:red"></i></div>
+            </div>
+        </div>
+    </div>-->
+    <!--Jquery và boostraps-->
+    <script src="/Scripts/nhthai/Lib/jquery-3.4.1.min.js"></script>
+    <script src="/Scripts/nhthai/Lib/bootstrap.min.js"></script>
+
+    <!--momentjs-->
+    <script src="/Scripts/nhthai/Lib/moment.js"></script>
+
+    <!--Jquery UI-->
+    <script src="/Scripts/nhthai/Lib/jquery-ui.js"></script>
+
+    <!--Thư viện jquery contextmenu-->
+    <script src="/Scripts/nhthai/Lib/jquery.contextMenu.min.js"></script>
+    <script src="/Scripts/nhthai/Lib/jquery.ui.position.js"></script>
+
+
+    <!--Các js tự viết-->
+    <script src="/Scripts/nhthai/Custome/main.js"></script>
+    <script src="/Scripts/nhthai/Commod/base.js"></script>
+    <script src="/Scripts/nhthai/Commod/commod.js"></script>
+    <script src="/Scripts/nhthai/Commod/Dialog.js"></script>
+
+
+
+    <!--Jquery key-->
+    <script src="/Scripts/nhthai/Lib/jquery.key.js"></script>
+    <script>
+
+    </script>
+</body>
+
+</html>

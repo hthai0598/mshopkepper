@@ -1,0 +1,98 @@
+﻿/*dialog nhacungcap
+Create by:nhthai 27/05/2019*/
+.dialog-chonnhacungcap-header {
+    display: flex;
+    justify-content: flex-start;
+    color: #d6d6d6;
+    font-size: 13px;
+    margin: 5px 10px 5px 10px;
+}
+
+.dialog-chonnhacungcap-header-element1, .dialog-chonnhacungcap-header-element2, .dialog-chonnhacungcap-header-element3, .dialog-chonnhacungcap-header-element4 {
+    line-height: 32px;
+    margin: 5px;
+    padding: 0px 10px;
+}
+
+.dialog-chonnhacungcap-header-element2 {
+    border: 1px solid #d6d6d6;
+    border-radius: 4px;
+    width: 180px;
+}
+
+    .dialog-chonnhacungcap-header-element2 span {
+        margin: 0 65px 0 5px;
+    }
+
+.dialog-chonnhacungcap-header-element3 {
+    border: 1px solid #d6d6d6;
+    border-radius: 4px;
+    height: 32px;
+    width: 350px;
+}
+
+    .dialog-chonnhacungcap-header-element3 input {
+        border: 0px solid;
+        height: 20px;
+        width: 160px;
+        outline: none;
+        width: 100% !important;
+    }
+
+.dialog-chonnhacungcap-header-element4 {
+    border: 1px solid #026b97;
+    border-radius: 4px;
+    color: #026b97;
+    font-weight: bold;
+}
+
+.dialog-chonnhacungcap-content {
+    border: 1px solid #d0d0d0;
+    margin: 5px 10px 0px 10px;
+    height: 300px;
+    overflow-y: scroll;
+}
+
+.dialog-chonnhacungcap-content-title {
+    display: grid;
+    grid-template-columns: 0.2fr 1fr 1fr 1fr 1fr;
+    font-size: 13px;
+    background: #f6f6f6;
+    position: sticky;
+    top: 0;
+}
+
+.dialog-chonnhacungcap-content-title-element1, .dialog-chonnhacungcap-content-title-element2, .dialog-chonnhacungcap-content-title-element3, .dialog-chonnhacungcap-content-title-element4, .dialog-chonnhacungcap-content-title-element5 {
+    text-align: center;
+    font-weight: bold;
+    line-height: 32px;
+    border-right: 1px solid #d0d0d0;
+    border-bottom: 1px solid #d0d0d0;
+}
+
+.dialog-chonnhacungcap-content-des {
+    /*display: grid;
+    grid-template-columns: 0.2fr 1fr 1fr 1fr 1fr;*/
+    font-size: 13px;
+}
+
+.dialog-chonnhacungcap-content-des-element {
+    display: grid;
+    grid-template-columns: 0.2fr 1fr 1fr 1fr 1fr;
+    line-height: 32px;
+}
+
+.element {
+    line-height: 32px;
+    border-right: 1px solid #d0d0d0;
+    border-bottom: 1px solid #d0d0d0;
+    padding: 5px;
+}
+
+.dialog-chonnhacungcap-content-des .dialog-chonnhacungcap-content-des-element:nth-child(even) {
+    background: #f6f6f6;
+}
+
+.dialog-chonnhnv-content-des {
+    font-size: 13px;
+}

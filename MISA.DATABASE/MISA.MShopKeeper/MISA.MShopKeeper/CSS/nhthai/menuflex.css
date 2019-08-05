@@ -1,0 +1,130 @@
+﻿/*menu dọc*/
+/*Create by: nhthai(27/05/2019)*/
+
+
+/*Chia bố cục cho thanh menu dọc*/
+.menu {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    line-height: 40px;
+}
+
+    /*Chỉnh sửa thuộc tính icon*/
+    .menu .fa-home {
+        color: #fff;
+        margin-left: 10px;
+        margin-right: 10px;
+    }
+
+/*Xét màu riêng biệt cho div chứa logo*/
+#menu-icon {
+    background: #006189;
+    line-height: 50px;
+}
+
+.flex-menu {
+    position: relative;
+    background-color: #026b97;
+}
+
+
+/*Xét màu khi hover vào các mục trong menu*/
+.menu .list:hover {
+    background: #006189;
+    transition: 0.4s;
+}
+
+
+/*Xét màu cho chữ trong thanh menu*/
+.menu span {
+    color: #fff;
+    font-size: 13px;
+}
+
+.list {
+    display: grid;
+    grid-template-columns: 0.5fr 1fr;
+}
+
+
+.iconcls-report {
+    background: url('/Content/nhthai/Img/slibarmenu.png') no-repeat -32px -281px;
+    width: 18px;
+    height: 17px;
+}
+
+.iconcls-purchares {
+    background: url('/Content/nhthai/Img/slibarmenu.png') no-repeat -32px -44px;
+    width: 18px;
+    height: 15px;
+}
+
+.iconcls-home {
+    background: url('/Content/nhthai/Img/slibarmenu.png') no-repeat -32px -4px;
+    width: 19px;
+    height: 15px;
+}
+
+.iconcls-stock {
+    background: url('/Content/nhthai/Img/slibarmenu.png') no-repeat -30px -82px;
+    width: 21px;
+    height: 15px;
+}
+
+.iconcls-cash {
+    background: url('/Content/nhthai/Img/slibarmenu.png') no-repeat -32px -123px;
+    width: 18px;
+    height: 19px;
+}
+
+.iconcls-payment-receipt {
+    background: url('/Content/nhthai/Img/slibarmenu.png') no-repeat -32px -163px;
+    width: 18px;
+    height: 16px;
+}
+
+.iconcls-promotion-group {
+    background: url('/Content/nhthai/Img/slibarmenu.png') no-repeat -33px -203px;
+    width: 17px;
+    height: 14px;
+}
+
+.iconcls-dictionary {
+    background: url('/Content/nhthai/Img/slibarmenu.png') no-repeat -32px -247px;
+    width: 19px;
+    height: 14px
+}
+
+.iconcls-settings {
+    background: url('/Content/nhthai/Img/slibarmenu.png') no-repeat -33px -323px;
+    width: 17px;
+    height: 16px;
+}
+
+.icon-menuhelp {
+    background: url('/Content/nhthai/Img/slibarmenu.png') no-repeat -33px -392px;
+    width: 17px;
+    height: 17px;
+}
+
+.icon-menusubcribe {
+    background: url('/Content/nhthai/Img/slibarmenu.png') no-repeat -33px -427px;
+    width: 17px;
+    height: 17px;
+}
+
+.iconcls-inventoryitem {
+    background: url('/Content/nhthai/Img/slibarmenu.png') no-repeat -29px -356px;
+    width: 23px;
+    height: 19px;
+}
+
+.icon {
+    position: relative;
+    top: 8px;
+}
+
+.list {
+    padding: 0 10px 0 10px;
+}

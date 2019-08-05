@@ -1,0 +1,106 @@
+﻿/*Phân trang
+Create by: nhthai(27/05/2019)*/
+
+
+.paginationn {
+    background: #fff;
+    padding: 10px;
+    height: 40px;
+}
+
+    .paginationn > div {
+        float: left;
+        font-size: 13px;
+        height: 20px;
+    }
+
+.margin-pa {
+    margin: 0 2px 0 2px;
+}
+
+.paginationn-toggle {
+    background: #fff;
+}
+
+    .paginationn-toggle div:hover {
+        background: rgb(2, 107, 151);
+        color: #fff;
+    }
+
+.pagination-input {
+    border: 1px solid #e1e1e1;
+    margin: 0 10px 0 10px;
+}
+
+    .pagination-input input {
+        outline: none;
+        width: 40px;
+        padding: 0px;
+    }
+
+.pagination-select {
+    border: 1px solid #e1e1e1;
+    border-radius: 4px;
+    width: 35px;
+    height: 24px !important;
+}
+
+#pagination1 {
+    background: url('/Content/nhthai/Img/common-icon.png')no-repeat -649px -124px;
+    width: 24px;
+    height: 24px;
+    background-color: #fff;
+    border: 1px solid #247ba0;
+    border-radius: 3px;
+    cursor: pointer;
+}
+
+
+
+#pagination2 {
+    background: url('/Content/nhthai/Img/common-icon.png') no-repeat -700px -124px;
+    width: 24px;
+    height: 24px;
+    background-color: #fff;
+    border: 1px solid #247ba0;
+    border-radius: 3px;
+    -moz-border-radius: 3px;
+    -webkit-border-radius: 3px;
+    cursor: pointer;
+}
+
+#pagination3 {
+    background: url('/Content/nhthai/Img/common-icon.png') no-repeat -749px -124px;
+    width: 24px;
+    height: 24px;
+    background-color: #fff;
+    border: 1px solid #247ba0;
+    border-radius: 3px;
+    -moz-border-radius: 3px;
+    -webkit-border-radius: 3px;
+    cursor: pointer;
+}
+
+#pagination4 {
+    background: url('/Content/nhthai/Img/common-icon.png') no-repeat -798px -124px;
+    width: 24px;
+    height: 24px;
+    background-color: #fff;
+    border: 1px solid #247ba0;
+    border-radius: 3px;
+    -moz-border-radius: 3px;
+    -webkit-border-radius: 3px;
+    cursor: pointer;
+}
+
+#pagination5 {
+    background: url('/Content/nhthai/Img/common-icon.png') no-repeat -849px -124px;
+    width: 24px;
+    height: 24px;
+    background-color: #fff;
+    border: 1px solid #247ba0;
+    border-radius: 3px;
+    -moz-border-radius: 3px;
+    -webkit-border-radius: 3px;
+    cursor: pointer;
+}

@@ -1,0 +1,114 @@
+﻿
+/*Nội dung table*/
+/*
+Create by: nhthai(27/05/2019)*/
+
+.table-content {
+    background: #fff;
+    padding: 7px;
+}
+
+input[name] {
+    font-size: 13px !important;
+    padding-left: 5px;
+}
+
+.table-content-filter {
+    display: flex;
+    justify-content: flex-start;
+}
+
+.table-content-filter-list {
+    margin-left: 4px;
+    margin-right: 4px;
+    border-radius: 5px;
+    position: relative;
+}
+
+    .table-content-filter-list span {
+        font-size: 13px;
+    }
+
+.aa {
+    margin-top: 4px;
+}
+
+.table-content-filter-list input, select {
+    border-radius: 4px;
+}
+
+.table-content-filter-list {
+}
+
+.icon-date {
+    float: right;
+    width: 20px;
+    height: 28px;
+    background: url('/Content/nhthai/Img/common-icon.png') 0 -169px;
+}
+
+
+.table-content-filter-list-date input {
+    border: none;
+    width: 100px;
+    outline: none;
+    font-size: 13px;
+}
+
+#fill-date {
+    height: 100%;
+    outline: none;
+}
+
+.table-content-filter-list-date {
+    padding-left: 5px;
+    display: flex;
+    background: #fff;
+    border: 1px solid #e1e1e1;
+    border-radius: 2px;
+    line-height: 30px;
+}
+
+#get-data {
+    border: 1px solid #006189;
+    padding: 2px 14px;
+    color: #006189;
+    font-weight: 500;
+    position: relative;
+}
+
+
+
+    #get-data a {
+        border: none;
+        background: #fff;
+        color: #006189;
+        font-weight: 600;
+        font-size: 13px;
+        text-decoration: none;
+    }
+
+#fillter-getdate {
+    border: 1px solid #e1e1e1;
+    border-radius: 2px;
+    line-height: 30px;
+}
+
+    #fillter-getdate input {
+        border: none;
+        outline: none;
+        width: 120px;
+        position: relative;
+    }
+
+
+    #fillter-getdate img {
+        cursor: pointer;
+        margin: 4px;
+    }
+
+strong {
+    font-weight: bolder;
+    display: block;
+    text-align: right;
+}
